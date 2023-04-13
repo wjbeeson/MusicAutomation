@@ -96,6 +96,7 @@ class Downloader():
             #  fill out boxes with account info
             input_user.send_keys(user)
             input_password.send_keys(password)
+            #  TODO: Add support for clicking the exit button on the login banner
             login_button = self._driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
             time.sleep(5)
             login_button.click()
@@ -178,11 +179,11 @@ class Downloader():
             _generate_tracks()
 
 
-track_length = 700
+track_length = 60
 track_count = 16
 channels = []
 parameters = ["Calm","Ambient","Zen"]
-login_path = "login_info.csv"
+login_path = "Mubert/login_info.csv"
 
 downloader = Downloader(track_count, track_length, channels, parameters, login_path)
 downloader.download_tracks()
