@@ -1,5 +1,9 @@
+import re
+
+import html5lib as html5lib
 from selenium import webdriver
 from selenium.common import StaleElementReferenceException
+from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
 import time
 import pandas as pd
@@ -7,6 +11,8 @@ import urllib.request
 import random
 import os
 from tkinter import filedialog
+from bs4 import BeautifulSoup
+import requests
 
 from selenium.webdriver.common.by import By
 
@@ -67,8 +73,18 @@ class Downloader():
             login_button = self._driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
             login_button.click()
         def _generate_tracks():
-            self._driver.implicitly_wait(10)
-            rows = self._driver.find_elements("class[type='app-table-row']")
+            time.sleep(3)
+
+            html = self._driver.page_source
+            soup = BeautifulSoup(html, "html5lib")
+            form = soup.findAll(class_="app-table-row", style=re.compile("^color: "))
+
+            rows = self._driver.find_elements(By.CSS_SELECTOR, "tr[style*='color: ']")
+            for row in rows:
+                action = ActionChains(self._driver)
+                action.move_to_element(row)
+                action.perform()
+                pass
             pass
         df = pd.read_csv(self.login_path)
         for index, row in df.iterrows():
