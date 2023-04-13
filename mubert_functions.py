@@ -1,3 +1,4 @@
+import math
 import re
 
 import html5lib as html5lib
@@ -16,16 +17,39 @@ import requests
 
 from selenium.webdriver.common.by import By
 
-
+MAX_DOWNLOADS = 5
 class Downloader():
-    def __init__(self, track_count, m_duration, channels):
-        self.login_path = "login_info.csv"
+    def __init__(self, track_count, m_duration, channels, parameters, login_path):
         self.track_count = track_count
-        self.m_duration = m_duration
+        self.channels = channels
+
+        #  convert parameter list to correct format
+        self.prompt = ""
+        for word in parameters:
+            self.prompt = self.prompt + word
+            self.prompt = self.prompt + " "
+
+        #  convert sec to correct format
+        min = math.floor(m_duration / 60)
+        min_text = str(min)
+        if len(min_text) == 1:
+            min_text = "0" + min_text
+
+        sec = m_duration % 60
+        sec_text = str(sec)
+        if len(sec_text) == 1:
+            sec_text = "0" + sec_text
+        self.duration = min_text + sec_text
+
+
+
+        self.login_path = login_path
         self._driver = webdriver.Chrome(options=Options())
 
         url = "https://mubert.com/render/sign-in"
         self._driver.get(url)
+        self._complete_downloads = 0
+        self._active_downloads = 0
     def add_mubert_account(self, user, password, channel):
         def _initialize_login_file():
             def _create_login_table():
@@ -64,46 +88,104 @@ class Downloader():
 
     def download_tracks(self):
         def _login(user, password):
+
             #  find input boxes for user and password
             input_user = self._driver.find_element(By.CSS_SELECTOR, "input[name='email']")
             input_password = self._driver.find_element(By.CSS_SELECTOR, "input[name='password']")
+
             #  fill out boxes with account info
             input_user.send_keys(user)
             input_password.send_keys(password)
             login_button = self._driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
+            time.sleep(5)
             login_button.click()
+            time.sleep(5)
+            pass
         def _generate_tracks():
-            time.sleep(3)
+            def _click_button():
+                #  find text boxes
+                prompt = self._driver.find_element(By.CSS_SELECTOR, "input[name='prompt']")
+                duration = self._driver.find_element(By.CSS_SELECTOR, "input[name='duration']")
 
-            html = self._driver.page_source
-            soup = BeautifulSoup(html, "html5lib")
-            form = soup.findAll(class_="app-table-row", style=re.compile("^color: "))
+                #  clear fields from garbage text
+                prompt.clear()
+                duration.clear()
+
+                #  send keys
+                prompt.send_keys(self.prompt)
+                duration.send_keys(self.duration)
+                time.sleep(1)
+
+                pass
+                generate_button = self._driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
+                generate_button.click()
+                time.sleep(5)
+                pass
+            def _get_active_downloads():
+                result = 0
+                print("Reading...")
+                html = self._driver.page_source
+                soup = BeautifulSoup(html, "html5lib")
+                rows = soup.findAll("table")[1].findAll(class_="app-table-row")
+                for row in rows:
+                    if len(row.find_all(id="eXtM1V8wye91")) == 1:
+                        result = result + 1
+                #  TODO switch back
+                print(f"In Progress: [{result}]")
+                return result
+                #return 10
+
+            #  initial count of active downloads
+            self._driver.get("https://mubert.com/render/my-generated-tracks")
+            time.sleep(5)
+            self._active_downloads = _get_active_downloads()
+            self._complete_downloads = -self._active_downloads
+
+            #  start downloads
+            while self._complete_downloads < self.track_count:
+                pass
+                #  update completed downloads
+                actual_active_dls = _get_active_downloads()
+                if actual_active_dls < self._active_downloads:
+                    self._complete_downloads = self._complete_downloads + (self._active_downloads - actual_active_dls)
+                self._active_downloads = actual_active_dls
+
+                #  shift screen to click button until maximum downloads are queued
+                if self._active_downloads < MAX_DOWNLOADS:
+                    self._driver.get("https://mubert.com/render/")
+                    time.sleep(5)
+                    for i in range(MAX_DOWNLOADS - self._active_downloads):
+                        _click_button()
+                self._active_downloads = MAX_DOWNLOADS
+
+                #  shift back to monitor screen to wait and repeat
+                self._driver.get("https://mubert.com/render/my-generated-tracks")
+                time.sleep(5)
+            pass
+
+
+
 
             rows = self._driver.find_elements(By.CSS_SELECTOR, "tr[style*='color: ']")
-            for row in rows:
-                action = ActionChains(self._driver)
-                action.move_to_element(row)
-                action.perform()
-                pass
-            pass
+
         df = pd.read_csv(self.login_path)
         for index, row in df.iterrows():
             channel = row['channel']
             user = row['user']
             password = row['password']
             _login(user, password)
+
             _generate_tracks()
 
 
-track_length = 225
+track_length = 700
 track_count = 16
-# option arg to specify the specific channels you wish to create videos for
-# defaults to generating tracks for all of them
 channels = []
-#user = "redditlifestyle@gmail.com"
-#password = "55SharedPass55^^"
-#channel = "test channel"
+parameters = ["Calm","Ambient","Zen"]
+login_path = "login_info.csv"
 
-downloader = Downloader(track_count, track_length, channels)
-#downloader.add_mubert_account(user, password, channel)
+downloader = Downloader(track_count, track_length, channels, parameters, login_path)
 downloader.download_tracks()
+
+
+#downloader.add_mubert_account(user, password, channel)
