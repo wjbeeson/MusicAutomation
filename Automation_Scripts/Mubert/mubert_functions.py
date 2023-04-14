@@ -179,11 +179,11 @@ class Downloader():
             _generate_tracks()
 
 
-track_length = 60
+track_length = 30
 track_count = 16
 channels = []
 parameters = ["Calm","Ambient","Zen"]
-login_path = "Mubert/login_info.csv"
+login_path = "login_info.csv"
 
 downloader = Downloader(track_count, track_length, channels, parameters, login_path)
 downloader.download_tracks()
