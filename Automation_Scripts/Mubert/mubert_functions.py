@@ -39,7 +39,7 @@ class MubertManager():
         self.pat = get_pat()
 
         #  record class globals for generation
-        self.track_duration = track_duration
+        self.track_duration = float(track_duration)
         self.track_count = track_count
         self.loop = loop
 
@@ -131,8 +131,18 @@ class MubertManager():
 
         #  turn files into ffmpeg inputs
         audio_inputs = []
+        fade_in_sec = 5
+        fade_out_sec = 12
+
         for file in file_list:
-            audio_inputs.append(ffmpeg.input(file))
+            audio_inputs.append(
+                ffmpeg
+                .input(file)
+                .filter(filter_name="atrim",start=0,duration=self.track_duration)
+                .filter(filter_name="afade",type="in",start_time=0,duration=fade_in_sec,curve="losi")
+                .filter(filter_name="afade", type="out", start_time=self.track_duration-fade_out_sec, duration=fade_out_sec, curve="par")
+                .filter(filter_name="atrim", start=0, duration=self.track_duration)
+            )
         pass
         (
             ffmpeg
@@ -167,11 +177,14 @@ f = open("batch_info", "w")
 
 for prompt in prompts:
     mm = MubertManager(track_duration=track_duration, track_count=track_count)
+    mm.concat_tracks()
     mm.generate_tracks(prompt=prompt, batch=batch)
+
     mm.download_tracks()
     #  TODO: Add ability for multiple outputs
     #  TODO: Add temp clearing abilities / log to know which files go in final
-    mm.concat_tracks()
+    #  TODO: Compile config settings into a .ini file
+
     batch = batch + 1
 
 
