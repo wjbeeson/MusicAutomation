@@ -77,16 +77,17 @@ class BackgroundGenerator:
             version=version,
             input=
             {
-                "model_checkpoint" : "Protogen_V2.2.ckpt",
-                "animation_prompts" : self.prompt,
-                "translation_x" : "0:(0)",
-                "width" : 1024,
-                "fps": 5,
-                "zoom": "0:(1.04)"
+                "model_checkpoint": "Protogen_V2.2.ckpt",
+                "animation_prompts": self.prompt,
+                "translation_x": "0:(0)",
+                "width": 128,
+                "height": 128,
+                "fps": 10,
+                "zoom": "0:(1.04)",
+                "max_frames": 100,
 #               use_init=True,
 #               init_image=self.filename,
 #               animation_mode="2D",
-#               max_frames=200,
 #               width=1024
             }
         )
