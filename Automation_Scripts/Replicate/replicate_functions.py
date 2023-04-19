@@ -11,11 +11,12 @@ import pandas as pd
 import random
 import base64
 from tkinter import filedialog
+import openai
 
 def random_prompt():
     filename = "choice_pool.csv"
 
-    df = pd.read_csv(filename)
+    df = pd.read_csv(filename).dropna()
 
     col1 = df.iloc[:, 0].tolist()
     col2 = df.iloc[:, 1].tolist()
@@ -97,6 +98,21 @@ class BackgroundGenerator:
             time.sleep(60)
         pass
 
+class GPT_API:      #OPENAI_API_KEY = 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
+    def __init__(self, api_key):
+        self.api_key = api_key
+        openai.api_key = self.api_key
+
+    def generate_text(self, prompt, max_tokens=1000, n=1, stop=None, temperature=0.9):
+        response = openai.Completion.create(
+            engine="text-davinci-002",
+            prompt=prompt,
+            max_tokens=max_tokens,
+            n=n,
+            stop=stop,
+            temperature=temperature,
+        )
+        return response.choices[0].text.strip()
 
 animation_prompts = {
     0: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic castle in the style of a paper quilling painting",
@@ -110,3 +126,11 @@ test.queue_video(animation_prompts)
 test.download_videos()
 
 
+#Generate song titles
+if __name__ == "__main__":
+    api_key = os.getenv("OPENAI_API_KEY")
+    davinci = GPT_API(api_key)
+    random_values = random_prompt()
+    gpt_prompt = f'"below is a list of 24 hypothetical lofi hiphop song titles that are loosely related to the following themes but do not include these exact words: {", ".join(str(x) for x in random_values)}"'
+    song_titles = davinci.generate_text(gpt_prompt)
+    print(song_titles)
