@@ -1,8 +1,11 @@
+import json
 import os
+import time
 import urllib
 from tkinter import Image
 from urllib.request import urlretrieve
 import replicate
+import requests
 from PIL import Image
 import pandas as pd
 import random
@@ -31,31 +34,10 @@ def random_prompt():
     return random_values
 
 class BackgroundGenerator:
-    def __init__(self, animation_prompts):
-        def _get_filename():
-            filename = ""
-            for i, word in enumerate(self.prompt):
-                split = word.split(" ")
-                for token in split:
-                    filename = filename + str.title(token)
-                if i < len(self.prompt) - 1:
-                    filename = filename + "_"
-            pass
-            files = os.listdir("tmp")
-            names = []
+    def __init__(self):
+        self.ids = []
 
-            for file in files:
-                names.append(file.split('_')[0])
-
-            next_name = -1
-            while True:
-                next_name = next_name + 1
-                if str(next_name) not in names:
-                    break
-            filename = str(next_name) + '_' + filename
-            filename = f"tmp/{filename}.png"
-            return filename
-
+    def queue_video(self, animation_prompts):
         def _convert_prompt(animation_prompts):
             temp_prompt = ""
             for i, animation_prompt in enumerate(animation_prompts.keys()):
@@ -66,10 +48,7 @@ class BackgroundGenerator:
                 temp_prompt = temp_prompt + f"{key}: {value}"
             return temp_prompt
 
-        self.prompt = _convert_prompt(animation_prompts)
-        self.filename = _get_filename()
-
-    def queue_video(self):
+        prompt = _convert_prompt(animation_prompts)
         model = replicate.models.get("deforum-art/deforum-stable-diffusion")
         version = model.versions.get("652b0fed80b8c0845b20de06f877115f56b70b2136d02db95f163eff4b95e35d")
         print("Queue Video...")
@@ -78,31 +57,56 @@ class BackgroundGenerator:
             input=
             {
                 "model_checkpoint": "Protogen_V2.2.ckpt",
-                "animation_prompts": self.prompt,
+                "animation_prompts": prompt,
                 "translation_x": "0:(0)",
-                "width": 128,
-                "height": 128,
+                "width": 1024,
+                "height": 512,
                 "fps": 10,
                 "zoom": "0:(1.04)",
-                "max_frames": 100,
-#               use_init=True,
-#               init_image=self.filename,
-#               animation_mode="2D",
-#               width=1024
+                "max_frames": 200,
+                "animation_mode": "2D"
             }
         )
         pass
+        #  add id to list to check later
+        self.ids.append(json.loads(output.json())['id'])
 
         print("Done.\n")
+        pass
+
+    def download_videos(self):
+        def download_video(dl_link):
+            #  TODO: temp
+            video_file = requests.get(dl_link)
+            with open(f'temp/{id}.mp4', 'wb') as f:
+                f.write(video_file.content)
+
+
+        successful_downloads = []
+        while len(self.ids) > len(successful_downloads):
+            print("\nChecking status of downloads...")
+            for id in self.ids:
+                if id not in successful_downloads:
+                    response = replicate.predictions.get(id)
+                    status = json.loads(response.json())['status']
+                    print(f"id [{id}] status is {status}")
+                    if status == "succeeded":
+                        dl_link = json.loads(response.json())['output']
+                        download_video(dl_link)
+                        successful_downloads.append(id)
+            time.sleep(60)
+        pass
 
 
 animation_prompts = {
-    0: "cats in the style of ghibli",
-    50: "epic fantasy castle in the style of ghibli",
-    100: "epic fantasy town in the style of ghibli",
-    150: "infinite space in the style of ghibli"
+    0: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic castle in the style of a paper quilling painting",
+    50: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic mountains in the style of a paper quilling painting",
+    100: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic forest in the style of a paper quilling painting",
+    150: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic ocean by the sea in the style of a paper quilling painting"
 }
 
-test = BackgroundGenerator(animation_prompts)
-test.queue_video()
+test = BackgroundGenerator()
+test.queue_video(animation_prompts)
+test.download_videos()
+
 
