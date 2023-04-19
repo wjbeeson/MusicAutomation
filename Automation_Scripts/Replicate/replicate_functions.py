@@ -13,7 +13,7 @@ import base64
 from tkinter import filedialog
 
 def random_prompt():
-    filename = "choice_pool.csv"
+    filename = "../../Ref_Tables/choice_pool.csv"
 
     df = pd.read_csv(filename)
 
@@ -97,7 +97,7 @@ class BackgroundGenerator:
             time.sleep(60)
         pass
 
-
+#  TODO Implement Grabbag
 animation_prompts = {
     0: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic castle in the style of a paper quilling painting",
     50: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic mountains in the style of a paper quilling painting",

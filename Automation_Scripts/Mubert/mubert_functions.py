@@ -177,10 +177,13 @@ f = open("batch_info", "w")
 
 for prompt in prompts:
     mm = MubertManager(track_duration=track_duration, track_count=track_count)
-    mm.concat_tracks()
+
+    pass
     mm.generate_tracks(prompt=prompt, batch=batch)
 
     mm.download_tracks()
+    mm.concat_tracks()
+
     #  TODO: Add ability for multiple outputs
     #  TODO: Add temp clearing abilities / log to know which files go in final
     #  TODO: Compile config settings into a .ini file
