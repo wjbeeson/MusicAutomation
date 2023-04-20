@@ -11,48 +11,22 @@ import pandas as pd
 import random
 import base64
 from tkinter import filedialog
-import openai
 
-def random_prompt():
-    filename = "choice_pool.csv"
+import config
 
-    df = pd.read_csv(filename).dropna()
-
-    col1 = df.iloc[:, 0].tolist()
-    col2 = df.iloc[:, 1].tolist()
-    col3 = df.iloc[:, 2].tolist()
-    col4 = df.iloc[:, 3].tolist()
-    col5 = df.iloc[:, 4].tolist()
-
-    global random_values
-    random_value1 = random.choice(col1)
-    random_value2 = random.choice(col2)
-    random_value3 = random.choice(col3)
-    random_value4 = random.choice(col4)
-    random_value5 = random.choice(col5)
-
-    random_values = [random_value1, random_value2, random_value3, random_value4, random_value5]
-    return random_values
 
 class BackgroundGenerator:
     def __init__(self):
         self.ids = []
 
-    def queue_video(self, animation_prompts):
-        def _convert_prompt(animation_prompts):
-            temp_prompt = ""
-            for i, animation_prompt in enumerate(animation_prompts.keys()):
-                key = animation_prompt
-                value = animation_prompts[key]
-                if i != 0:
-                    temp_prompt = temp_prompt + " | "
-                temp_prompt = temp_prompt + f"{key}: {value}"
-            return temp_prompt
 
-        prompt = _convert_prompt(animation_prompts)
+
+    def generate_video(self, animation_prompts):
+        self.latest_id = []
+        prompt = animation_prompts
         model = replicate.models.get("deforum-art/deforum-stable-diffusion")
         version = model.versions.get("652b0fed80b8c0845b20de06f877115f56b70b2136d02db95f163eff4b95e35d")
-        print("Queue Video...")
+        print("Generating Video...")
         output = replicate.predictions.create(
             version=version,
             input=
@@ -64,15 +38,14 @@ class BackgroundGenerator:
                 "height": 512,
                 "fps": 10,
                 "zoom": "0:(1.04)",
-                "max_frames": 200,
+                "max_frames": config.FRAME_COUNT,
                 "animation_mode": "2D"
             }
         )
         pass
         #  add id to list to check later
         self.ids.append(json.loads(output.json())['id'])
-
-        print("Done.\n")
+        self.latest_id.append(json.loads(output.json())['id'])
         pass
 
     def download_videos(self):
@@ -95,42 +68,34 @@ class BackgroundGenerator:
                         dl_link = json.loads(response.json())['output']
                         download_video(dl_link)
                         successful_downloads.append(id)
-            time.sleep(60)
+            if len(self.ids) > len(successful_downloads):
+                time.sleep(60)
         pass
 
-class GPT_API:      #OPENAI_API_KEY = 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
-    def __init__(self, api_key):
-        self.api_key = api_key
-        openai.api_key = self.api_key
 
-    def generate_text(self, prompt, max_tokens=1000, n=1, stop=None, temperature=0.9):
-        response = openai.Completion.create(
-            engine="text-davinci-002",
-            prompt=prompt,
-            max_tokens=max_tokens,
-            n=n,
-            stop=stop,
-            temperature=temperature,
-        )
-        return response.choices[0].text.strip()
 
+
+def _convert_prompt(animation_prompts):
+    temp_prompt = ""
+    for i, animation_prompt in enumerate(animation_prompts.keys()):
+        key = animation_prompt
+        value = animation_prompts[key]
+        if i != 0:
+            temp_prompt = temp_prompt + " | "
+        temp_prompt = temp_prompt + f"{key}: {value}"
+    return temp_prompt
+
+'''
 animation_prompts = {
     0: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic castle in the style of a paper quilling painting",
     50: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic mountains in the style of a paper quilling painting",
     100: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic forest in the style of a paper quilling painting",
     150: "Majestic Towering Impenetrable Grandiose Imposing Ancient Regal Ornate Magnificent Stronghold Fortified Resilient Legendary Enchanting Commanding Timeless Mythical Invincible Splendid Iconic ocean by the sea in the style of a paper quilling painting"
 }
+prompt = _convert_prompt(animation_prompts)
 
-test = BackgroundGenerator()
-test.queue_video(animation_prompts)
+test = BackgroundGenerator(200)
+test.queue_video(prompt)
 test.download_videos()
 
-
-#Generate song titles
-if __name__ == "__main__":
-    api_key = os.getenv("OPENAI_API_KEY")
-    davinci = GPT_API(api_key)
-    random_values = random_prompt()
-    gpt_prompt = f'"below is a list of 24 hypothetical lofi hiphop song titles that are loosely related to the following themes but do not include these exact words: {", ".join(str(x) for x in random_values)}"'
-    song_titles = davinci.generate_text(gpt_prompt)
-    print(song_titles)
+'''
