@@ -1,33 +1,139 @@
-﻿urban,nature,indoors,japanese
-rooftop view,Tranquil forest,Cozy living room,Tranquil Zen garden
-central park,Serene lakeside,Elegant dining area,Picturesque tea house
-cityscape pov,Rolling meadows,Warm fireplace,Elegant tatami rooms
-Skyline panorama,Majestic mountains,Spacious open floor plan,Ancient Shinto shrine
-Bustling intersection,Secluded beach,Vaulted ceilings,Graceful geisha district
-Glistening skyscrapers,Peaceful countryside,Ambient lighting,Serene bamboo grove
-Concrete jungle,Blossoming garden,Plush furnishings,Traditional ryokan inn
-Neon-lit streets,Lush greenery,Chic bedroom,Stone lanterns
-Historic district,Babbling brook,Rustic exposed beams,Majestic torii gates
-High-rise buildings,Rustic woodland,Ornate staircase,Classic Japanese architecture
-Urban park,Dense foliage,Art-filled gallery,Cherry blossom-lined path
-Pedestrian plaza,Misty waterfalls,Sunlit atrium,Ornate kimonos
-Glass-and-steel architecture,Golden sunsets,Inviting entryway,Winding cobblestone streets
-Towering structures,Gently swaying trees,Comfortable den,Moss-covered temple
-Vibrant street art,Wildflower fields,Colorful children's playroom,Historic wooden machiya
-Cobblestone alleyways,Crystal-clear springs,Tranquil reading nook,Koi-filled pond
-Dense city blocks,Snow-capped peaks,Sweeping ballroom,Paper shoji screens
-Public square,Breathtaking vistas,Polished hardwood floors,Tranquil hot spring onsen
-Metropolitan sprawl,Undulating hills,Exquisite chandelier,Japanese rock garden
-Traffic-congested roads,Enchanting woods,Paneled library,Bustling marketplace
-Modern cityscape,Pristine shorelines,Vintage decor,Delicate ikebana arrangements
-Riverside promenade,Soothing ocean waves,Minimalist design,Refined tea ceremony
-Underground subway station,Picturesque valleys,Bohemian loft,Calligraphy workshop
-Majestic bridges,Sun-dappled glades,Indoor garden oasis,Majestic samurai castle
-Urban waterfront,Fragrant lavender fields,Serene meditation space,Blossoming plum orchards
-Business district,Canopied trails,Airy sunroom,Thatched-roof farmhouses
-Graffiti-covered alley way,Idyllic village,Outdoor patio retreat,Graceful Noh theater
-Green urban oasis,Sandy dunes,Enchanting wine cellar,Intricate woodblock prints
-Crowded marketplace,Whispering winds,Textured accent walls,Meditation hall
-rooftop garden,Serpentine river,Cottage-style conservatory,Timeless bonsai garden
-Industrial warehouse district,Celestial kingdom,Rooftop deck with a view,
-Adaptive reuse buildings,Floating islands,,
+﻿"urban,nature,indoors,japanese,fantasy,cyberpunk,cyberpunk,dark sad,sci fi,tan desert,psychedelic,california vibes,gotham,celtic,underwater,space,ancient rome greece,countryside,parties"
+"rooftop view,Tranquil forest,Cozy living room,Tranquil Zen garden,Crystal Caves of Seraphia,Dark, Graffiti-Covered Alleyways,Dark, Graffiti-Covered Alleyways"
+"central park,Serene lakeside,Elegant dining area,Picturesque tea house,Dragons Breath Waterfall,Abandoned Flickering Warehouses,Abandoned Flickering Warehouses"
+"cityscape pov,Rolling meadows,Warm fireplace,Elegant tatami rooms,Enchanted Garden of Faeries,Crowded Night Market Bustle,Crowded Night Market Bustle"
+"Skyline panorama,Majestic mountains,Spacious open floor plan,Ancient Shinto shrine,Phoenixs Nesting Grounds,Sleazy Strip Club Dens,Sleazy Strip Club Dens"
+"Bustling intersection,Secluded beach,Vaulted ceilings,Graceful geisha district,Starlight Forest of the Celestials,High-Rise Apartment Towers,High-Rise Apartment Towers"
+"Glistening skyscrapers,Peaceful countryside,Ambient lighting,Serene bamboo grove,Unicorn Meadows of Arcadia,Futuristic Subway Platforms,Futuristic Subway Platforms"
+"Concrete jungle,Blossoming garden,Plush furnishings,Traditional ryokan inn,Moonlit Bay of Mermaids,Overgrown Post-Apocalyptic Ruins,Overgrown Post-Apocalyptic Ruins"
+"Neon-lit streets,Lush greenery,Chic bedroom,Stone lanterns,Rainbow Mountains of Euphoria,Industrial Factory Labyrinths,Industrial Factory Labyrinths"
+"Historic district,Babbling brook,Rustic exposed beams,Majestic torii gates,Realm of Eternal Spring,Underground Hacker Hideouts,Underground Hacker Hideouts"
+"High-rise buildings,Rustic woodland,Ornate staircase,Classic Japanese architecture,Ice Palace of the Frost Giants,Backstreet Noodle Joints,Backstreet Noodle Joints"
+"Urban park,Dense foliage,Art-filled gallery,Cherry blossom-lined path,Golden Fields of the Sun God,Abandoned Shopping Mallscapes,Abandoned Shopping Mallscapes"
+"Pedestrian plaza,Misty waterfalls,Sunlit atrium,Ornate kimonos,Crystal Clear Lake of the Undines,Dimly Lit Casino Havens,Dimly Lit Casino Havens"
+"Glass-and-steel architecture,Golden sunsets,Inviting entryway,Winding cobblestone streets,Sky Pillars of the Titans,Cybernetic Implant Clinics,Cybernetic Implant Clinics"
+"Towering structures,Gently swaying trees,Comfortable den,Moss-covered temple,Island of the Sirens,Glitchy VR Arcades,Glitchy VR Arcades"
+"Vibrant street art,Wildflower fields,Colorful childrens playroom,Historic wooden machiya,Dark Forest of the Black Unicorn,Seedy Red-Light Districts,Seedy Red-Light Districts"
+"Cobblestone alleyways,Crystal-clear springs,Tranquil reading nook,Koi-filled pond,Firefly Meadow of the Pixies,High-Speed Highway Corridors,High-Speed Highway Corridors"
+"Dense city blocks,Snow-capped peaks,Sweeping ballroom,Paper shoji screens,Crystal Mountains of the Crystal Dragons,Industrial Scrapyard Junkyards,Industrial Scrapyard Junkyards"
+"Public square,Breathtaking vistas,Polished hardwood floors,Tranquil hot spring onsen,Hidden Oasis of the Sand Nymphs,Corporate Headquarters Skyscrapers,Corporate Headquarters Skyscrapers"
+"Metropolitan sprawl,Undulating hills,Exquisite chandelier,Japanese rock garden,Cloud City of the Sky Elves,Floating Airship Hubs,Floating Airship Hubs"
+"Traffic-congested roads,Enchanting woods,Paneled library,Bustling marketplace,Starry Night Canyon of the Night Elves,Secret Underground Labs,Secret Underground Labs"
+"Modern cityscape,Pristine shorelines,Vintage decor,Delicate ikebana arrangements,Mystic Garden of the Moon Goddess,Rainy Gutter Alleyways,Rainy Gutter Alleyways"
+"Riverside promenade,Soothing ocean waves,Minimalist design,Refined tea ceremony,Glimmering Glade of the Woodland Nymphs,City Rooftop Landscapes,City Rooftop Landscapes"
+"Underground subway station,Picturesque valleys,Bohemian loft,Calligraphy workshop,Silver Sands of the Moonlit Desert,Vibrant Dance Club Scenes,Vibrant Dance Club Scenes"
+"Majestic bridges,Sun-dappled glades,Indoor garden oasis,Majestic samurai castle,Glowing Caves of the Glow Worms,Abandoned Theme Park Wastelands,Abandoned Theme Park Wastelands"
+"Urban waterfront,Fragrant lavender fields,Serene meditation space,Blossoming plum orchards,Sacred Grove of the Druids,Street Food Vendors Carts,Street Food Vendors Carts"
+"Business district,Canopied trails,Airy sunroom,Thatched-roof farmhouses,Thundering Falls of the Giants,Cyberpunk Art Galleriescapes,Cyberpunk Art Galleriescapes"
+"Graffiti-covered alley way,Idyllic village,Outdoor patio retreat,Graceful Noh theater,Whirlpool Bay of the Sea Serpents,Cyber-Enhancement Black Markets,Cyber-Enhancement Black Markets"
+"Green urban oasis,Sandy dunes,Enchanting wine cellar,Intricate woodblock prints,Emerald Forest of the Emerald Dragons,Gangster Stronghold Hubs,Gangster Stronghold Hubs"
+"Crowded marketplace,Whispering winds,Textured accent walls,Meditation hall,Sunflower Fields of the Sunflower Giants,Tech Startup Officespace,Tech Startup Officespace"
+"rooftop garden,Serpentine river,Cottage-style conservatory,Timeless bonsai garden,Whispering Winds of the Wind Sylphs,Street Racing Showdowns,Street Racing Showdowns"
+"Industrial warehouse district,Celestial kingdom,Rooftop deck with a view,Ancient Imperial Palaces,Crystal Palace of the Ice Queen,Interstellar Spaceports,Interstellar Spaceports"
+"Adaptive reuse buildings,Floating islands,Glamorous Hollywood-Inspired Lounge,Idyllic Zen Temples,Rainbow Reef of the Merfolk,Power Generation Facilities,Power Generation Facilities"
+"Downtown District,Tranquil Forest Clearing,Indoor-Outdoor Zen Garden,Serene Bamboo Forests,Giants Playground,Bustling Seaports,Bustling Seaports"
+"Skyline Horizon,Serene Mountain Peak,Space-Age Home Office,Traditional Tea Houses,Enchanted Lake of the Water Sprites,Abandoned Hospital Ruins,Abandoned Hospital Ruins"
+"Street Art Hotspot,Peaceful Riverbank,Enchanted Forest-Inspired Library,Ornate Torii Gates,Firebirds Nesting Grounds,Floating Bar Platforms,Floating Bar Platforms"
+"Pedestrian Mall,Calm Seaside Cove,Rustic Treehouse-Inspired Bedroom,Elegant Shinto Shrines,Aurora Forest of the Aurora Elves,Government Facility Hidden Bunkers,Government Facility Hidden Bunkers"
+"Modern Office Buildings,Rustic Woodland Cabin,Retro Diner-Inspired Kitchen,Picturesque Waterfalls,Black Hole Bay of the Abyssal Krakens,Mercenary Outpost Strongholds,Mercenary Outpost Strongholds"
+"Vibrant Nightlife Scene,Secluded Beach Hideaway,Bohemian Textile Studio,Traditional Ryokan Inns,Fiery Volcano of the Fire Elementals,Robot Manufacturing Plants,Robot Manufacturing Plants"
+"Historical Landmarks,Quiet Countryside Meadow,Indoor-Outdoor Sunroom,Japanese Rock Gardens,Green Mountains of the Earth Elementals,Underground Fight Club Arenas,Underground Fight Club Arenas"
+"Bustling Commercial District,Scenic Waterfall Oasis,Contemporary Indoor-Outdoor Kitchen,Cherry Blossom-Lined Streets,Stormy Seas of the Storm Elementals,Dystopian Police Precincts,Dystopian Police Precincts"
+"Waterfront Promenade,Serene Alpine Lake,Futuristic Home Art Studio,Graceful Geisha Quarters,Celestial Observatory of the Star Watchers,Rooftop Garden Oases,Rooftop Garden Oases"
+"Industrial District,Enchanted Forest Trail,Cozy Home Wine Bar,Bustling Fish Markets,Underwater Caves of the Sea Dwarves,Junkyard Graveyards,Junkyard Graveyards"
+"Urban Renewal Zone,Secluded Mountain Retreat,Sleek Minimalist Art Gallery,Timeless Bonsai Gardens,Lost City of Atlantis,Futuristic Bridge Constructs,Futuristic Bridge Constructs"
+"Fashion District,Soothing Desert Dunes,Indoor-Outdoor Rock Garden,Majestic Samurai Castles,Grotto of the Sea Sirens,Abandoned Airfield Ghost Towns,Abandoned Airfield Ghost Towns"
+"Neighborhood Marketplace,Majestic Snowy Mountains,Mediterranean-Style Lounge,Delicate Ikebana Workshops,Dark Sky Canyon of the Night Pegasus,Underground Drug Dens,Underground Drug Dens"
+"Metropolitan Hub,Peaceful Garden Gazebo,Industrial Brick and Steel Kitchen,Refined Tea Ceremonies,Floating Island of the Sky Whales,Neonatal Care Wards,Neonatal Care Wards"
+"Scenic Urban Views,Lush Tropical Rainforest,Colorful Graffiti Art Gallery,Intricate Woodblock Print Galleries,Shadowy Forest of the Dark Elves,Future City Skyline Vistas,Future City Skyline Vistas"
+"Rooftop Bars,Tranquil Lakeside Dock,Vintage Travel-Inspired Lounge,Historic Wooden Machiya Townhouses,Lava Fields of the Fire Giants,Futuristic Cemetery Landscapes,Futuristic Cemetery Landscapes"
+"Cultural Landmarks,Quiet Coastal Lighthouse,Minimalist Indoor Garden Room,Thatched-Roof Farmhouses,Coral Gardens of the Coral Nymphs,Retro-Futuristic Diner Havens,Retro-Futuristic Diner Havens"
+"Artistic Enclaves,Calm Wilderness Stream,Luxury Indoor Golf Simulator,Tranquil Zen Gardens,Diamond Lake of the Diamond Gnomes,Teleportation Network Hubs,Teleportation Network Hubs"
+"Green Urban Spaces,Serene Mountaintop Lookout,Urban Farmhouse Kitchen,Paper Shoji-Screened Rooms,Crystal Rainforest of the Crystal Faeries,Cybercrime Task Force Headquarters,Cybercrime Task Force Headquarters"
+"Historic Architecture,Romantic Garden Arbor,Futuristic Cyber Office,Koi-Filled Ponds,Iceberg Lagoon of the Ice Mermaids,Underground Catacomb Labyrinths,Underground Catacomb Labyrinths"
+"Up-and-Coming Neighborhoods,Soothing Oceanfront View,Retro Pool Hall Lounge,Serene Onsen Hot Springs,Sunken Shipwreck of the Pirates,Robotic Surgery Theatres,Robotic Surgery Theatres"
+"Creative Workspaces,Quiet Country Farmhouse,Modern Coastal-Inspired Lounge,Winding Cobblestone Streets,Poisonous Swamp of the Bog Goblins,Abandoned Water Park Ruins,Abandoned Water Park Ruins"
+"High-End Retail District,Relaxing Hammock Retreat,Indoor Waterfall Oasis,Meditative Meditation Halls,Whispering Woods of the Tree Spirits,Space Elevator Platforms,Space Elevator Platforms"
+"Tourist Attractions,Hidden Forest Glade,Steampunk Home Office,Artistic Calligraphy Workshops,Wishing Well of the Genies,Immersive Escape Room Challenges,Immersive Escape Room Challenges"
+"Neighborhood Parks,Serene Garden Pond,Cozy Rustic Outdoor-Inspired Lounge,Classic Japanese Architecture,Dragonfly Marsh of the Dragonflies,Underground Music Venues,Underground Music Venues"
+"Transportation Hubs,Peaceful Rolling Hills,Luxurious Indoor Pool,Ornate Kimono Shops,Mountain of the Dragon Riders,Black-Market Weapon Stores,Black-Market Weapon Stores"
+"Urban Recreation Centers,Serene Botanical Garden,Cozy Farmhouse Kitchen,Hidden Ninja Villages,Golden Coast of the Golden Phoenixes,Dystopian Courtrooms,Dystopian Courtrooms"
+"Architectural Wonders,Calm Coastal Harbor,Artistic Black and White Gallery,Lush Tea Plantations,Mystic Island of the Mystics,Virtual Cryptocurrency Banks,Virtual Cryptocurrency Banks"
+"Public Plazas,Secluded Mountain Meadow,Organic Modern Living Room,Secluded Mountain Retreats,Enchanted River of the River Naiads,Underground Sex Clubs,Underground Sex Clubs"
+"Local Artisan Markets,Tranquil River Rapids,Secret Bookshelf Door Entryway,Serene Pagoda Temples,Flamingo Lagoon of the Flamingos,Seedy Motel Rooms,Seedy Motel Rooms"
+",Quiet Forest Stream,Sleek Black and White Home Theater,Majestic Snowy Mountains,Starry Night Sky of the Constellations,Ghost Town Cityscapes,Ghost Town Cityscapes"
+",Peaceful Countryside Orchard,Colorful Bohemian Living Room,Tranquil Rice Terraces,Moonlit Meadow of the Moonlit Unicorns,Floating Slum Districts,Floating Slum Districts"
+",Scenic Hilltop Vista,Futuristic Indoor-Outdoor Living Space,Timeless Pottery Studios,Diamond Cave of the Diamond Dragons,Cyborg Repair Stations,Cyborg Repair Stations"
+",Soothing Wetland Sanctuary,Sleek Modern Indoor Green Wall,Bustling Food Stalls,Sapphire Beach of the Sapphire Mermaids,Forgotten Library Vaults,Forgotten Library Vaults"
+",Secluded Beachfront Bungalow,Rustic Tuscan-Inspired Kitchen,Historic Samurai Training Grounds,Shadow Mountains of the Shadow Creatures,Underground Survivalist Bunkers,Underground Survivalist Bunkers"
+",Majestic Waterfall Grotto,Mid-Century Modern Lounge,Ancient Stone Lanterns,Emerald River of the Emerald Fairies,Augmented Reality Art Installations,Augmented Reality Art Installations"
+",Rustic Log Cabin Retreat,Luxurious Spa Bathroom,Traditional Kabuki Theaters,Firefly Forest of the Firefly Faeries,Cybernetic Prosthetic Clinics,Cybernetic Prosthetic Clinics"
+",Calm Country Estate,Minimalist Zen-Inspired Meditation Room,Calligraphic Art Galleries,Obsidian Peaks of the Obsidian Giants,Abandoned Chemical Plant Ruins,Abandoned Chemical Plant Ruins"
+",Serene Forest Pathway,Industrial Outdoor-Inspired Dining Area,Classic Zen Bridges,Sunflower Meadow of the Sunflower Fairies,Underground Graffiti Galleries,Underground Graffiti Galleries"
+",Romantic Meadow Picnic,Cozy Country-Inspired Living Room,Tranquil Traditional Gardens,Rainbow Canyon of the Rainbow Unicorns,Streetwear Fashion Boutiques,Streetwear Fashion Boutiques"
+",Tranquil Sunflower Field,Sleek White Art Studio,Picturesque Old Towns,Twilight Valley of the Twilight Elves,Retro Video Arcade Arcades,Retro Video Arcade Arcades"
+",Quiet Coastal Cliffs,Rustic Wine Tasting Room,Iconic Cherry Blossom Spots,Stardust Fields of the Stardust Fairies,Space Observatory Stations,Space Observatory Stations"
+",Soothing Desert Oasis,Bold and Bright Art Gallery,Scenic Mountain Passes,Ocean of Glass of the Glass Mermaids,Abandoned Space Station Platforms,Abandoned Space Station Platforms"
+",Peaceful Mountain Pass,Serene Indoor-Outdoor Koi Pond,Intimate Zen Tea Rooms,Sunflower Valley of the Sunflower Elves,Dystopian Schoolyard Playgrounds,Dystopian Schoolyard Playgrounds"
+",Secluded Island Paradise,Art Deco-Inspired Home Theater,Lush Bamboo Forest Trails,Misty Mountains of the Mist Giants,Neonatal Intensive Care Units,Neonatal Intensive Care Units"
+",Relaxing Garden Hammock,Chic Modern Home Office,Timeless Ceramic Kilns,Seafoam Beach of the Seafoam Dragons,Abandoned Cruise Ship Wrecks,Abandoned Cruise Ship Wrecks"
+",Hidden Waterfall Trail,Eclectic Indoor-Outdoor Dining Room,Delicate Japanese Paper Shops,Starry Night Sky of the Starry Night Pegasus,Urban Hydroponic Farms,Urban Hydroponic Farms"
+",Serene Zen Garden,Retro-Inspired Art Studio,Serene Karesansui Rock Gardens,Crystal Forest of the Crystal Fairies,Illegal Cybernetic Enhancement Labs,Illegal Cybernetic Enhancement Labs"
+",Calm Forest Glamping,Rustic Chic Outdoor-Inspired Bedroom,Classic Wooden Bridges,Firefly Canyon of the Firefly Dragons,Abandoned Train Station Depots,Abandoned Train Station Depots"
+",Scenic Mountain Hot Springs,Traditional Indoor-Outdoor Fireplace,Ornate Buddhist Temples,Moonlit Shore of the Moonlit Selkies,Futuristic Data Centers,Futuristic Data Centers"
+",Soothing Garden Fountain,,Cultural Heritage Sites,Emerald Coast of the Emerald Sea Turtles,Bioluminescent Underwater Labs,Bioluminescent Underwater Labs"
+",Quiet Countryside B&B,,Tranquil Bamboo Forest Temples,Enchanted Hill of the Enchanted Gnomes,Post-Industrial Wasteland,Post-Industrial Wasteland"
+",Tranquil Beachside Coves,,Picturesque Coastal Villages,Mystic Sky of the Mystic Dragons,Smog-Filled Mega-Cities,Smog-Filled Mega-Cities"
+",Peaceful Ocean View,,Traditional Onsen Resorts,Rainbow Meadow of the Rainbow Butterflies,Cybernetic Organ Chop Shops,Cybernetic Organ Chop Shops"
+",Serene Hillside Meadow,,Scenic Hiking Trails,Dragons Den of the Dragon Warriors,Underground Bioengineering Labs,Underground Bioengineering Labs"
+",Calm Riverbank Picnic,,Majestic Snow-Capped Volcanoes,Starry Night Beach of the Starry Night Mermaids,Gang-Run Nightclubs,Gang-Run Nightclubs"
+",Secluded Desert Retreat,,Historic Taiko Drumming Centers,Crystal River of the Crystal Water Nymphs,Urban Jungle Overpasses,Urban Jungle Overpasses"
+",Rustic Mountain Lodge,,Enchanting Wisteria Tunnels,Sunflower Hill of the Sunflower Giants,Solar-Powered Off-Grid Communes,Solar-Powered Off-Grid Communes"
+",Soothing Seaside Bluffs,,Tranquil Moss-Covered Temples,Dragonfly River of the Dragonfly Elves,Transhumanist Transplant Clinics,Transhumanist Transplant Clinics"
+",Peaceful Vineyard Sunset,,Picturesque Tea Fields,Crystal Coast of the Crystal Seahorses,Multilevel Parking Garage Mazes,Multilevel Parking Garage Mazes"
+",Secluded Tropical Beach,,Intricate Kimono Embroidery Studios,Mermaid Cove of the Mermaids,Rundown Cybernetic Slums,Rundown Cybernetic Slums"
+",Relaxing Garden Oasis,,Lush Fruit Orchards,Moonstone Beach of the Moonstone Dragons,Virtual Reality Fashion Shows,Virtual Reality Fashion Shows"
+",Hidden Mountain Lake,,Ancient Tea Ceremony Houses,Enchanted Stream of the Enchanted Sylphs,Pervasive Augmented Reality Billboards,Pervasive Augmented Reality Billboards"
+",Serene Countryside Garden,,Timeless Ukiyo-e Art Museums,Shadowy Lake of the Shadow Fish,Futuristic Shipping Container Cities,Futuristic Shipping Container Cities"
+",Calm Coastal Dunes,,Bustling Izakaya Bars,Starry Night Forest of the Starry Night Elves,Biotech Corporate Research Facilities,Biotech Corporate Research Facilities"
+",Tranquil Lagoon Haven,,Historic Samurai Residences,Crystal Sky of the Crystal Eagles,Abandoned Subway Tunnels,Abandoned Subway Tunnels"
+",Scenic Garden Walkway,,Serene Cherry Blossom Gardens,Mystic Valley of the Mystic Unicorns,Holographic Concert Arenas,Holographic Concert Arenas"
+",Soothing Riverbank Retreat,,Classic Kabuki Costume Shops,Firefly Lake of the Firefly Selkies,Urban Combat Zones,Urban Combat Zones"
+",Quiet Coastal Fishing Village,,Ornate Meiji-Era Buildings,Moonlit Hill of the Moonlit Gnomes,,"
+",Secluded Wilderness Hike,,Traditional Wagashi Sweet Shops,Rainbow Ocean of the Rainbow Whales,,"
+",Rustic Waterfall Cabin,,Serene Waterfall Hikes,Dragons Nesting Grounds of the Dragon Hatchlings,,"
+",Peaceful Garden Picnic,,Picturesque Plum Orchards,Starry Night Lake of the Starry Night Ducks,,"
+",Serene Pine Forest,,Tranquil Sake Breweries,Crystal Ocean of the Crystal Octopuses,,"
+",Calm Country Retreat,,Classic Samurai Armor Shops,Sunflower River of the Sunflower Sylphs,,"
+",Hidden Garden Trellis,,Timeless Matcha Tea Ceremonies,Mystic Beach of the Mystic Mermaids,,"
+",Tranquil Coral Reef,,Bustling Street Food Festivals,Shadowy Forest of the Shadow Wolves,,"
+",,,Scenic Forest Trails,Rainbow River of the Rainbow Fish,,"
+",,,Majestic Red Lacquer Bridges,Firefly Valley of the Firefly Gnomes,,"
+",,,,Moonlit Meadow of the Moonlit Dragons,,"
+",,,,Dragons Roost of the Dragon Elders,,"
+",,,,Starry Night Valley of the Starry Night Unicorns,,"
+",,,,Crystal Mountain of the Crystal Yetis,,"
+",,,,Mystic Sea of the Mystic Sea Serpents,,"
+",,,,Sunflower Cove of the Sunflower Mermaids,,"
+",,,,Shadowy Marsh of the Shadow Toads,,"
+",,,,Rainbow Cove of the Rainbow Dolphins,,"
+",,,,Firefly Meadow of the Firefly Unicorns,,"
+",,,,Moonlit Ocean of the Moonlit Sharks,,"
+",,,,Dragonfly Valley of the Dragonfly Gnomes,,"
+",,,,Starry Night River of the Starry Night Otters,,"
+",,,,Crystal Cliff of the Crystal Chameleons,,"
+",,,,Mystic Sky of the Mystic Phoenixes,,"
+",,,,Sunflower Hill of the Sunflower Squirrels,,"
+",,,,Shadowy Hill of the Shadow Bears,,"
+",,,,Rainbow Falls of the Rainbow Phoenixes,,"
+",,,,Firefly Stream of the Firefly Pixies,,"
+",,,,Moonlit Cove of the Moonlit Jellyfish,,"
+",,,,Dragons Lair of the Dragon Mages,,"
+",,,,Starry Night Bay of the Starry Night Seals,,"
+",,,,Crystal Lake of the Crystal Frogs,,"
+",,,,Mystic Forest of the Mystic Deer,,"
+",,,,Sunflower Field of the Sunflower Hedgehogs,,"
+",,,,Shadowy Valley of the Shadow Panthers,,"
+",,,,Rainbow Hill of the Rainbow Rabbits,,"
+",,,,Firefly Beach of the Firefly Seagulls,,"
+",,,,Moonlit Lagoon of the Moonlit,,"
