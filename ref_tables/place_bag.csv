@@ -1,33 +1,139 @@
-﻿urban,nature,indoors,japanese
-rooftop view,Tranquil forest,Cozy living room,Tranquil Zen garden
-central park,Serene lakeside,Elegant dining area,Picturesque tea house
-cityscape pov,Rolling meadows,Warm fireplace,Elegant tatami rooms
-Skyline panorama,Majestic mountains,Spacious open floor plan,Ancient Shinto shrine
-Bustling intersection,Secluded beach,Vaulted ceilings,Graceful geisha district
-Glistening skyscrapers,Peaceful countryside,Ambient lighting,Serene bamboo grove
-Concrete jungle,Blossoming garden,Plush furnishings,Traditional ryokan inn
-Neon-lit streets,Lush greenery,Chic bedroom,Stone lanterns
-Historic district,Babbling brook,Rustic exposed beams,Majestic torii gates
-High-rise buildings,Rustic woodland,Ornate staircase,Classic Japanese architecture
-Urban park,Dense foliage,Art-filled gallery,Cherry blossom-lined path
-Pedestrian plaza,Misty waterfalls,Sunlit atrium,Ornate kimonos
-Glass-and-steel architecture,Golden sunsets,Inviting entryway,Winding cobblestone streets
-Towering structures,Gently swaying trees,Comfortable den,Moss-covered temple
-Vibrant street art,Wildflower fields,Colorful children's playroom,Historic wooden machiya
-Cobblestone alleyways,Crystal-clear springs,Tranquil reading nook,Koi-filled pond
-Dense city blocks,Snow-capped peaks,Sweeping ballroom,Paper shoji screens
-Public square,Breathtaking vistas,Polished hardwood floors,Tranquil hot spring onsen
-Metropolitan sprawl,Undulating hills,Exquisite chandelier,Japanese rock garden
-Traffic-congested roads,Enchanting woods,Paneled library,Bustling marketplace
-Modern cityscape,Pristine shorelines,Vintage decor,Delicate ikebana arrangements
-Riverside promenade,Soothing ocean waves,Minimalist design,Refined tea ceremony
-Underground subway station,Picturesque valleys,Bohemian loft,Calligraphy workshop
-Majestic bridges,Sun-dappled glades,Indoor garden oasis,Majestic samurai castle
-Urban waterfront,Fragrant lavender fields,Serene meditation space,Blossoming plum orchards
-Business district,Canopied trails,Airy sunroom,Thatched-roof farmhouses
-Graffiti-covered alley way,Idyllic village,Outdoor patio retreat,Graceful Noh theater
-Green urban oasis,Sandy dunes,Enchanting wine cellar,Intricate woodblock prints
-Crowded marketplace,Whispering winds,Textured accent walls,Meditation hall
-rooftop garden,Serpentine river,Cottage-style conservatory,Timeless bonsai garden
-Industrial warehouse district,Celestial kingdom,Rooftop deck with a view,
-Adaptive reuse buildings,Floating islands,,
+﻿urban,nature,indoors,japanese,fantasy,cyberpunk
+rooftop view,Tranquil forest,Cozy living room,Tranquil Zen garden,Crystal Caves of Seraphia,Nightclub Inferno Alley
+central park,Serene lakeside,Elegant dining area,Picturesque tea house,Dragons Breath Waterfall,Cyberzone Diner Plaza
+cityscape pov,Rolling meadows,Warm fireplace,Elegant tatami rooms,Enchanted Garden of Faeries,Neon Boulevard Heights
+Skyline panorama,Majestic mountains,Spacious open floor plan,Ancient Shinto shrine,Phoenixs Nesting Grounds,Synthwave Cityscape Heights
+Bustling intersection,Secluded beach,Vaulted ceilings,Graceful geisha district,Starlight Forest of the Celestials,Technotronic Tower Heights
+Glistening skyscrapers,Peaceful countryside,Ambient lighting,Serene bamboo grove,Unicorn Meadows of Arcadia,Dystopian Datahive Tower
+Concrete jungle,Blossoming garden,Plush furnishings,Traditional ryokan inn,Moonlit Bay of Mermaids,Blade Runner Station Plaza
+Neon-lit streets,Lush greenery,Chic bedroom,Stone lanterns,Rainbow Mountains of Euphoria,Future Shock Square Heights
+Historic district,Babbling brook,Rustic exposed beams,Majestic torii gates,Realm of Eternal Spring,Electric Dreams Arena Plaza
+High-rise buildings,Rustic woodland,Ornate staircase,Classic Japanese architecture,Ice Palace of the Frost Giants,Cyber Street Market
+Urban park,Dense foliage,Art-filled gallery,Cherry blossom-lined path,Golden Fields of the Sun God,Neon Noir Hideout
+Pedestrian plaza,Misty waterfalls,Sunlit atrium,Ornate kimonos,Crystal Clear Lake of the Undines,Skyline Synapse Ridge
+Glass-and-steel architecture,Golden sunsets,Inviting entryway,Winding cobblestone streets,Sky Pillars of the Titans,Hyperdrive Hotel Plaza
+Towering structures,Gently swaying trees,Comfortable den,Moss-covered temple,Island of the Sirens,Binary Barrens Heights
+Vibrant street art,Wildflower fields,Colorful childrens playroom,Historic wooden machiya,Dark Forest of the Black Unicorn,Circuit City Square
+Cobblestone alleyways,Crystal-clear springs,Tranquil reading nook,Koi-filled pond,Firefly Meadow of the Pixies,Chrome Catacombs Ridge
+Dense city blocks,Snow-capped peaks,Sweeping ballroom,Paper shoji screens,Crystal Mountains of the Crystal Dragons,Digital Den Hideout
+Public square,Breathtaking vistas,Polished hardwood floors,Tranquil hot spring onsen,Hidden Oasis of the Sand Nymphs,Electric Empire Heights
+Metropolitan sprawl,Undulating hills,Exquisite chandelier,Japanese rock garden,Cloud City of the Sky Elves,Futuristic Fueling Station
+Traffic-congested roads,Enchanting woods,Paneled library,Bustling marketplace,Starry Night Canyon of the Night Elves,Holographic Horizon Ridge
+Modern cityscape,Pristine shorelines,Vintage decor,Delicate ikebana arrangements,Mystic Garden of the Moon Goddess,Industrial Incline Heights
+Riverside promenade,Soothing ocean waves,Minimalist design,Refined tea ceremony,Glimmering Glade of the Woodland Nymphs,Jazz Fusion Joint Plaza
+Underground subway station,Picturesque valleys,Bohemian loft,Calligraphy workshop,Silver Sands of the Moonlit Desert,Lightwave Lounge Plaza
+Majestic bridges,Sun-dappled glades,Indoor garden oasis,Majestic samurai castle,Glowing Caves of the Glow Worms,Matrix Mansion Heights
+Urban waterfront,Fragrant lavender fields,Serene meditation space,Blossoming plum orchards,Sacred Grove of the Druids,Metropolis Marketplace Plaza
+Business district,Canopied trails,Airy sunroom,Thatched-roof farmhouses,Thundering Falls of the Giants,Neon Nightscape Heights
+Graffiti-covered alley way,Idyllic village,Outdoor patio retreat,Graceful Noh theater,Whirlpool Bay of the Sea Serpents,Netrunner Nexus Plaza
+Green urban oasis,Sandy dunes,Enchanting wine cellar,Intricate woodblock prints,Emerald Forest of the Emerald Dragons,Nightfall Nucleus Ridge
+Crowded marketplace,Whispering winds,Textured accent walls,Meditation hall,Sunflower Fields of the Sunflower Giants,Omnicomplex Plaza Heights
+rooftop garden,Serpentine river,Cottage-style conservatory,Timeless bonsai garden,Whispering Winds of the Wind Sylphs,Pixelated Playground Plaza
+Industrial warehouse district,Celestial kingdom,Rooftop deck with a view,,Crystal Palace of the Ice Queen,Quantum Quarters Ridge
+Adaptive reuse buildings,Floating islands,,,Rainbow Reef of the Merfolk,Rogue Robot Rampage
+,,,,Giants Playground,Shadow Syndicate Stronghold
+,,,,Enchanted Lake of the Water Sprites,Synthpop Sanctum Plaza
+,,,,Firebirds Nesting Grounds,Techno Tavern Plaza
+,,,,Aurora Forest of the Aurora Elves,Tron Turf Ridge
+,,,,Black Hole Bay of the Abyssal Krakens,Ultraviolet Underground Hideout
+,,,,Fiery Volcano of the Fire Elementals,Vaporwave Valley Heights
+,,,,Green Mountains of the Earth Elementals,Virtual Vortex Ridge
+,,,,Stormy Seas of the Storm Elementals,Cyber City Circuit
+,,,,Celestial Observatory of the Star Watchers,Data Dimension Heights
+,,,,Underwater Caves of the Sea Dwarves,Electric Eden Heights
+,,,,Lost City of Atlantis,Flashback Fortress Plaza
+,,,,Grotto of the Sea Sirens,Future Fjord Heights
+,,,,Dark Sky Canyon of the Night Pegasus,Glitch Garden Heights
+,,,,Floating Island of the Sky Whales,Hackers Haven Plaza
+,,,,Shadowy Forest of the Dark Elves,Infra-Inferno Ridge
+,,,,Lava Fields of the Fire Giants,Java Joint Plaza
+,,,,Coral Gardens of the Coral Nymphs,Kinetic Kismet Heights
+,,,,Diamond Lake of the Diamond Gnomes,Laser Lounge Plaza
+,,,,Crystal Rainforest of the Crystal Faeries,Megabyte Mansion Heights
+,,,,Iceberg Lagoon of the Ice Mermaids,Neon Nirvana Heights
+,,,,Sunken Shipwreck of the Pirates,Omega Oasis Plaza
+,,,,Poisonous Swamp of the Bog Goblins,Pixel Palace Plaza
+,,,,Whispering Woods of the Tree Spirits,Quantum Quell Ridge
+,,,,Wishing Well of the Genies,Retro Refinery Plaza
+,,,,Dragonfly Marsh of the Dragonflies,Synapse Station Plaza
+,,,,Mountain of the Dragon Riders,Techno Temple Heights
+,,,,Golden Coast of the Golden Phoenixes,Ultramodern Uptown Ridge
+,,,,Mystic Island of the Mystics,Vapor Village Plaza
+,,,,Enchanted River of the River Naiads,Wired Warehouse Heights
+,,,,Flamingo Lagoon of the Flamingos,Xeno Xenith Plaza
+,,,,Starry Night Sky of the Constellations,Yellow Yakuza Yards
+,,,,Moonlit Meadow of the Moonlit Unicorns,Zero Gravity Zone
+,,,,Diamond Cave of the Diamond Dragons,Acid Alley Heights
+,,,,Sapphire Beach of the Sapphire Mermaids,Binary Bay Plaza
+,,,,Shadow Mountains of the Shadow Creatures,Chrome Citadel Heights
+,,,,Emerald River of the Emerald Fairies,Data Dungeon Ridge
+,,,,Firefly Forest of the Firefly Faeries,Electric Ecclesia Heights
+,,,,Obsidian Peaks of the Obsidian Giants,Fractal Fortress Plaza
+,,,,Sunflower Meadow of the Sunflower Fairies,Gigabyte Grotto Ridge
+,,,,Rainbow Canyon of the Rainbow Unicorns,Hologram Heights Plaza
+,,,,Twilight Valley of the Twilight Elves,Infra-Infinity Plaza
+,,,,Stardust Fields of the Stardust Fairies,Jetset Junction Ridge
+,,,,Ocean of Glass of the Glass Mermaids,Kryptonite Keep Heights
+,,,,Sunflower Valley of the Sunflower Elves,Laser Labyrinth Plaza
+,,,,Misty Mountains of the Mist Giants,Megacity Market Heights
+,,,,Seafoam Beach of the Seafoam Dragons,Neon Nexus Ridge
+,,,,Starry Night Sky of the Starry Night Pegasus,Omega Observatory Plaza
+,,,,Crystal Forest of the Crystal Fairies,Pixelated Promenade Plaza
+,,,,Firefly Canyon of the Firefly Dragons,Quantum Quay Heights
+,,,,Moonlit Shore of the Moonlit Selkies,Retro Rendezvous Plaza
+,,,,Emerald Coast of the Emerald Sea Turtles,Synapse Sanctuary Heights
+,,,,Enchanted Hill of the Enchanted Gnomes,Techno Tower Plaza
+,,,,Mystic Sky of the Mystic Dragons,Ultraviolet Utopia Ridge
+,,,,Rainbow Meadow of the Rainbow Butterflies,Vapor Vault Heights
+,,,,Dragons Den of the Dragon Warriors,Wired World Plaza
+,,,,Starry Night Beach of the Starry Night Mermaids,Xenon Xenith Ridge
+,,,,Crystal River of the Crystal Water Nymphs,Yellow Yakuza Yard
+,,,,Sunflower Hill of the Sunflower Giants,Zero Hour Zone
+,,,,Dragonfly River of the Dragonfly Elves,Aeon Avenue Heights
+,,,,Crystal Coast of the Crystal Seahorses,Binary Beach Plaza
+,,,,Mermaid Cove of the Mermaids,Chrome Canyon Ridge
+,,,,Moonstone Beach of the Moonstone Dragons,Data Drive Heights
+,,,,Enchanted Stream of the Enchanted Sylphs,Electric Enclave Plaza
+,,,,Shadowy Lake of the Shadow Fish,Fractal Folly Ridge
+,,,,Starry Night Forest of the Starry Night Elves,Gigabyte Garden Plaza
+,,,,Crystal Sky of the Crystal Eagles,Hologram Hall Heights
+,,,,Mystic Valley of the Mystic Unicorns,Infra-Inferno Plaza
+,,,,Firefly Lake of the Firefly Selkies,Jetstream Junction Ridge
+,,,,Moonlit Hill of the Moonlit Gnomes,
+,,,,Rainbow Ocean of the Rainbow Whales,
+,,,,Dragons Nesting Grounds of the Dragon Hatchlings,
+,,,,Starry Night Lake of the Starry Night Ducks,
+,,,,Crystal Ocean of the Crystal Octopuses,
+,,,,Sunflower River of the Sunflower Sylphs,
+,,,,Mystic Beach of the Mystic Mermaids,
+,,,,Shadowy Forest of the Shadow Wolves,
+,,,,Rainbow River of the Rainbow Fish,
+,,,,Firefly Valley of the Firefly Gnomes,
+,,,,Moonlit Meadow of the Moonlit Dragons,
+,,,,Dragons Roost of the Dragon Elders,
+,,,,Starry Night Valley of the Starry Night Unicorns,
+,,,,Crystal Mountain of the Crystal Yetis,
+,,,,Mystic Sea of the Mystic Sea Serpents,
+,,,,Sunflower Cove of the Sunflower Mermaids,
+,,,,Shadowy Marsh of the Shadow Toads,
+,,,,Rainbow Cove of the Rainbow Dolphins,
+,,,,Firefly Meadow of the Firefly Unicorns,
+,,,,Moonlit Ocean of the Moonlit Sharks,
+,,,,Dragonfly Valley of the Dragonfly Gnomes,
+,,,,Starry Night River of the Starry Night Otters,
+,,,,Crystal Cliff of the Crystal Chameleons,
+,,,,Mystic Sky of the Mystic Phoenixes,
+,,,,Sunflower Hill of the Sunflower Squirrels,
+,,,,Shadowy Hill of the Shadow Bears,
+,,,,Rainbow Falls of the Rainbow Phoenixes,
+,,,,Firefly Stream of the Firefly Pixies,
+,,,,Moonlit Cove of the Moonlit Jellyfish,
+,,,,Dragons Lair of the Dragon Mages,
+,,,,Starry Night Bay of the Starry Night Seals,
+,,,,Crystal Lake of the Crystal Frogs,
+,,,,Mystic Forest of the Mystic Deer,
+,,,,Sunflower Field of the Sunflower Hedgehogs,
+,,,,Shadowy Valley of the Shadow Panthers,
+,,,,Rainbow Hill of the Rainbow Rabbits,
+,,,,Firefly Beach of the Firefly Seagulls,
+,,,,Moonlit Lagoon of the Moonlit,

@@ -77,7 +77,7 @@ class MusicGenerator():
 
         def download_track(id, dl_link):
             audio_file = requests.get(dl_link)
-            with open(f'temp/{id}.mp3', 'wb') as f:
+            with open(f'temp_music/{id}.mp3', 'wb') as f:
                 f.write(audio_file.content)
 
         #  checks progress of downloads
@@ -143,7 +143,7 @@ for prompt in prompts:
     mm.concat_tracks()
 
     #  TODO: Add ability for multiple outputs
-    #  TODO: Add temp clearing abilities / log to know which files go in final
+    #  TODO: Add temp_music clearing abilities / log to know which files go in final
     #  TODO: Compile config settings into a .ini file
 
     batch = batch + 1

@@ -6,7 +6,7 @@ import pandas as pd
 
 
 class ProduceVideo:
-    def __init__(self, log_df: pd.DataFrame, bnum, inputs_dir="temp", output_path='done/'):
+    def __init__(self, log_df: pd.DataFrame, bnum, inputs_dir="temp_music", output_path='done/'):
         def get_list_from_directory(directory=""):
             file_list = []
             if directory == "":
@@ -112,13 +112,13 @@ class ProduceVideo:
         #  gather video stream
         for index, row in df.iterrows():
             file = row['idvideo'].split("'")[1]
-            video_file = f"temp/{file}.mp4"
+            video_file = f"temp_music/{file}.mp4"
             video_stream = boomarangify_video(video_file)
 
             #  gather audio stream
             audio_files = []
             for id in str(row['idmusic'].replace("[","").replace("]","").replace("'","")).replace(" ","").split(","):
-                audio_files.append(f"temp/{id}.mp3")
+                audio_files.append(f"temp_music/{id}.mp3")
             audio_stream = concat_audio(audio_files)
 
             #  get title info

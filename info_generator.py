@@ -9,7 +9,7 @@ class InfoGenerator:      #OPENAI_API_KEY = sk-h04CHLvvYZAXZ2iJF6RpT3BlbkFJKrAen
 
     #  TODO Parameterize
     #  max_tokens = how long the result is --> more means more cost
-    #  temperature = higher temp is more "creative"
+    #  temperature = higher temp_music is more "creative"
     def generate_text(self, prompt, max_tokens=1000, temperature=0.9):
         response = openai.Completion.create(
             engine="text-davinci-002",

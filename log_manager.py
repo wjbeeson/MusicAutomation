@@ -5,6 +5,11 @@ import pandas as pd
 
 import channel_manager
 import config
+
+import uuid
+import create_batch_files
+import json
+from datetime import datetime
 from channel_manager import ChannelManager
 class LogManager:
     def __init__(self, batch_dict, log_dir="ref_tables/log.csv"):
@@ -34,8 +39,6 @@ class LogManager:
         check_valid_path()
         self.log_df = pd.read_csv(self.log_loc)
         self.bnum = get_bnum()
-
-
         self._get_prompts()
         pass
     def _get_new_channel_table(self):
@@ -85,7 +88,7 @@ class LogManager:
                     places_cnt = config.FRAME_COUNT / config.DIST_BETWEEN
                     successful = 0
                     places_picks = []
-                    places_list = list(channel_bags['place'])
+                    places_list = [x for x in list(channel_bags['place']) if str(x) != 'nan']
                     while successful < places_cnt:
                         place_pick = random.randrange(len(places_list))
                         if places_list[place_pick] in places_picks:
@@ -93,15 +96,15 @@ class LogManager:
                         places_picks.append(places_list[place_pick])
                         successful = successful + 1
 
-
+                    pass
                     frame_count = 0
                     for place in places_picks:
                         prompt = ""
-                        prompt = f"{adj_prefix} {place} place in the style of {style_suffix}"
-                        result[frame_count] = prompt
+                        prompt = f"{adj_prefix} {place} in the style of {style_suffix}"
+                        result[str(frame_count)] = f" {str(prompt)}  --neg "
                         frame_count = frame_count + config.DIST_BETWEEN
-                    return result
                     pass
+                    return result
                 def convert_prompt(animation_prompts):
                     temp_prompt = ""
                     for i, animation_prompt in enumerate(animation_prompts.keys()):
@@ -112,21 +115,27 @@ class LogManager:
                         temp_prompt = temp_prompt + f"{key}: {value}"
                     return temp_prompt
 
-
-
                 music_prompt = generate_adj_prompt(5)
-                video_prompt = convert_prompt(generate_video_prompt(music_prompt))
-
+                video_prompt = generate_video_prompt(music_prompt)
+                batch_id = str(uuid.uuid1())
                 #  add run to df
                 df = pd.DataFrame({
                     'bnum': self.bnum,
                     'rnum': run_number,
                     'id': channel_id,
                     'pmusic': music_prompt,
-                    'pvideo': video_prompt,
+                    'pvideo': convert_prompt(video_prompt),
                     'idmusic': [""],
-                    'idvideo': "",
+                    'idvideo': batch_id,
                 })
+                #  get json object and write to file
+                batch_maker = create_batch_files.CreateBatchFiles()
+                batch_file = batch_maker.get_batch(prompt=video_prompt,batch_name=batch_id,timestring=datetime.now().strftime("%Y%m%d%H%M%S"))
+                json_object = json.dumps(batch_file, indent=4)
+                f = open(f"batch_files/{batch_id}", "w")
+                f.write(json_object)
+                f.close()
+                pass
                 self.log_df = pd.concat([df, self.log_df])
                 run_number = run_number + 1
         self.log_df.to_csv(self.log_loc, index=False)
