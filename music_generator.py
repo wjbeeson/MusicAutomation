@@ -105,7 +105,7 @@ class MusicGenerator():
                 if r_dict[id][0] == 2:
                     successful_dls.append(id)
                     download_track(id, r_dict[id][1])
-            time.sleep(1)
+            time.sleep(2)
         print("All downloads finished. Have a nice day!")
 
 

@@ -85,6 +85,7 @@ class LogManager:
                     style_suffix = styles_list[style_pick]
 
                     #  places
+                    test = pd.read_csv("C:\\Users\\wjbee\\PycharmProjects\\Music_Automation\\ref_tables\\place_bag.csv")
                     places_cnt = config.FRAME_COUNT / config.DIST_BETWEEN
                     successful = 0
                     places_picks = []

@@ -111,13 +111,15 @@ class ProduceVideo:
         df = log_df.query('bnum == @bnum')
         #  gather video stream
         for index, row in df.iterrows():
-            file = row['idvideo'].split("'")[1]
-            video_file = f"temp_music/{file}.mp4"
+            pass
+            file = row['idvideo']
+            video_file = f"temp_runpod/{file}.mp4"
             video_stream = boomarangify_video(video_file)
 
             #  gather audio stream
             audio_files = []
-            for id in str(row['idmusic'].replace("[","").replace("]","").replace("'","")).replace(" ","").split(","):
+            pass
+            for id in list(row['idmusic']):
                 audio_files.append(f"temp_music/{id}.mp3")
             audio_stream = concat_audio(audio_files)
 

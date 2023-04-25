@@ -1,6 +1,6 @@
 #  Music Settings
 TRACK_DURATION = 150  # individual track length
-TRACK_COUNT = 24  # total number of tracks
+TRACK_COUNT = 3  # total number of tracks
 FADE_IN_SEC = 5  # amount of time for each track to fade in
 FADE_OUT_SEC = 12  # amount of time for each track to fade out
 MUSIC_MODE = "track"  # mubert specific setting, see api
