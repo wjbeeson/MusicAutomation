@@ -6,7 +6,7 @@ import pandas as pd
 
 
 class ProduceVideo:
-    def __init__(self, log_df: pd.DataFrame, bnum, inputs_dir="temp_music", output_path='done/'):
+    def __init__(self, log_df: pd.DataFrame, bnum, output_path='done/'): # bnum is actually used, don't be fooled
         def get_list_from_directory(directory=""):
             file_list = []
             if directory == "":
@@ -18,8 +18,8 @@ class ProduceVideo:
                     file_list.append(abs_path)
             return file_list
 
-        def probe_video():
-            probe = ffmpeg.probe(self.video_file)
+        def probe_video(video_file):
+            probe = ffmpeg.probe(video_file)
             stream = next((stream for stream in probe['streams'] if stream['codec_type'] == 'video'), None)
 
             duration = float(stream['duration'])
@@ -36,8 +36,8 @@ class ProduceVideo:
 
             return (duration, fps, video_width, video_height, frames)
 
-        def probe_audio():
-            probe = ffmpeg.probe(self.audio_file)
+        def probe_audio(audio_file):
+            probe = ffmpeg.probe(audio_file)
             stream = next((stream for stream in probe['streams'] if stream['codec_type'] == 'audio'), None)
             duration = float(stream['duration'])
             return (duration)
@@ -113,27 +113,29 @@ class ProduceVideo:
         for index, row in df.iterrows():
             pass
             file = row['idvideo']
-            video_file = f"temp_runpod/{file}.mp4"
+            video_file = f"temp/{file}.mp4"
             video_stream = boomarangify_video(video_file)
 
             #  gather audio stream
             audio_files = []
             pass
             for id in list(row['idmusic']):
-                audio_files.append(f"temp_music/{id}.mp3")
+                audio_files.append(f"temp/{id}.mp3")
             audio_stream = concat_audio(audio_files)
 
             #  get title info
             unique_num = get_next_file_index(output_path)
             id = str(row['id'])
-            prompt = "_".join(str(row['pmusic']).split(" "))
             pass
             #  produce video
             (
                 ffmpeg
                 .concat(video_stream, audio_stream, v=1, a=1)
-                .output(f"{output_path}{unique_num}_{id}_{prompt}.mp4")
+                .output(f"{output_path}{unique_num}_{id}.mp4")
                 .run(overwrite_output=True)
             )
+'''
+test  = ProduceVideo(log_df=pd.read_csv("ref/log.csv"), bnum=69)
+'''
 
 

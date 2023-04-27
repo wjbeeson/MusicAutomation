@@ -1,15 +1,11 @@
+import config
 import json
-import os
 import time
-from tkinter.filedialog import askdirectory
 import httpx
 import requests
 from sentence_transformers import SentenceTransformer
-
-import config
-
 minilm = SentenceTransformer('all-MiniLM-L6-v2')
-import ffmpeg
+
 
 
 class MusicGenerator():
@@ -35,30 +31,65 @@ class MusicGenerator():
             print(f'Got token: {pat}')
             return pat
 
+        def get_streams_dict():
+            r = httpx.post('https://api-b2b.mubert.com/v2/GetPlayMusic',
+                           json={
+                               "method": "GetPlayMusic",
+                               "params": {
+                                   "pat": f"{self.pat}",
+                               }
+                           })
+
+            #  record id to download later
+            streams = {}
+            rdata = json.loads(r.text)
+            for category in rdata['data']['categories']:
+                # print(category['Name'])
+                for group in category['groups']:
+                    for channel in group['channels']:
+                        name = channel['name'].lower().replace(" ", "")
+                        streams[name] = channel['playlist']
+            return streams
         self.pat = get_pat()
+        self.channel_dict = get_streams_dict()
 
 
         # instantiate id list for later
         self.ids = []
 
-    def generate_tracks(self, prompt):
+
+    def generate_tracks(self, streams : list, intensities : list):
         self.ids = []
         tracks_generated = 0
         while tracks_generated < config.TRACK_COUNT:
+            stream = streams[tracks_generated % len(streams)]
+            intensity = intensities[tracks_generated % len(intensities)]
             #  queue track generation
             print(f"Queuing track [{tracks_generated + 1}]")
             r = httpx.post('https://api-b2b.mubert.com/v2/TTMRecordTrack',
                            json={
                                "method": "TTMRecordTrack",
                                "params": {
-                                   "text": f"{prompt}",
+                                   "text": f"{streams}",
                                    "pat": f"{self.pat}",
                                    "mode": f"{config.MUSIC_MODE}",
                                    "duration": f"{config.TRACK_DURATION}",
                                    "bitrate": "192"
                                }
                            })
-
+            r = httpx.post('https://api-b2b.mubert.com/v2/RecordTrack',
+                           json={
+                               "method": "RecordTrack",
+                               "params": {
+                                   "pat": f"{self.pat}",
+                                   "playlist": f"{self.channel_dict[stream]}",
+                                   "duration": f"{config.TRACK_DURATION}",
+                                   "format": "mp3",
+                                   "intensity": f"{intensity}",
+                                   "bitrate": "320",
+                                   "mode": f"{config.MUSIC_MODE}"
+                               }
+                           })
             #  record id to download later
             rdata = json.loads(r.text)
             self.ids.append(rdata['data']['tasks'][0]['task_id'])
@@ -77,7 +108,7 @@ class MusicGenerator():
 
         def download_track(id, dl_link):
             audio_file = requests.get(dl_link)
-            with open(f'temp_music/{id}.mp3', 'wb') as f:
+            with open(f'temp/{id}.mp3', 'wb') as f:
                 f.write(audio_file.content)
 
         #  checks progress of downloads
@@ -109,42 +140,6 @@ class MusicGenerator():
         print("All downloads finished. Have a nice day!")
 
 
-        pass
 
 
-#  start of driver code
-'''
-prompts = [
-    'kind beaver guards life tree, stan lee, epic',
-    'astronaut riding a horse',
-    'winnie the pooh cooking methamphetamine',
-    'vladimir lenin smoking weed with bob marley',
-    'soviet retrofuturism',
-    'two wasted friends high on weed are trying to navigate their way to their hostel in a big city, night, trippy',
-    'an elephant levitating on a gas balloon',
-    'calm music',
-    'a refrigerator floating in a pond'
-]
-prompts = [
-    'lofi calm soothing relaxation water smooth nature study'
-]
-track_duration = 150
-track_count = 24
-batch = 0
-f = open("Automation_Scripts/Mubert/batch_info", "w")
 
-for prompt in prompts:
-    mm = MusicGenerator(track_duration=track_duration, track_count=track_count)
-
-    pass
-    mm.generate_tracks(prompt=prompt, batch=batch)
-
-    mm.download_tracks()
-    mm.concat_tracks()
-
-    #  TODO: Add ability for multiple outputs
-    #  TODO: Add temp_music clearing abilities / log to know which files go in final
-    #  TODO: Compile config settings into a .ini file
-
-    batch = batch + 1
-'''
