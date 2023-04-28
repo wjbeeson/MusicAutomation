@@ -15,7 +15,7 @@ from dl_manager import Manager
 
 class Run:
     def __init__(self, batch):
-        subprocess.run("runpodctl start pod 0s5shmftxvujwh")
+        subprocess.run("runpodctl start pod 00hz3xz0o8i25x")
         self.manager = Manager(batch)
         self.music_gen = MusicGenerator()
         self.bnum = self.manager.bnum
@@ -54,14 +54,15 @@ class Run:
                     file_cloud_loc = bucket.blob(f"{id}.mp4")
                     file_cloud_loc.download_to_filename(f"temp/{id}.mp4")
                     completed_downloads.append(id)
+                    #  assemble video immediately after download
+                    ProduceVideo(log_df=self.manager.log_df, bnum=self.bnum, video_ids=[id])
             if len(completed_downloads) < len(video_ids):
                 time.sleep(30)
 
         #  stop runpod when finished
-        subprocess.run("runpodctl stop pod 0s5shmftxvujwh")
+        subprocess.run("runpodctl stop pod 00hz3xz0o8i25x")
 
-        #  assemble videos
-        ProduceVideo(log_df=self.manager.log_df, bnum=self.bnum)
+
 
         pass
 

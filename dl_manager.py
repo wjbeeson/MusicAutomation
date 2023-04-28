@@ -59,7 +59,7 @@ class Manager:
                     result = {}
 
                     #  pick random places
-                    places_cnt = math.floor(config.FRAME_COUNT / config.DIST_BETWEEN)
+                    places_cnt = math.floor(channel_dict['frames'] / channel_dict['prompt_dist'])
                     successful = 0
                     places_picks = []
                     places_list = channel_dict['places']
@@ -76,11 +76,12 @@ class Manager:
                     negative = channel_dict['negative']
                     colors = channel_dict['colors']
                     #  pick random colors
-                    color_palate = ", ".join(colors[random.randrange(len(colors))])
+
 
                     frame_count = 0
                     for place in places_picks:
-                        result[str(frame_count)] = f"{color_palate}, {place}, {positive} --neg {negative}"
+                        color_palate = ", ".join(colors[random.randrange(len(colors))])
+                        result[str(frame_count)] = f"{color_palate}, ({place}:2.0), {positive} --neg {negative}"
                         frame_count = frame_count + channel_dict['prompt_dist']
                     pass
                     return result

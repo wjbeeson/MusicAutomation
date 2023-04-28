@@ -6,7 +6,7 @@ import pandas as pd
 
 
 class ProduceVideo:
-    def __init__(self, log_df: pd.DataFrame, bnum, output_path='done/'): # bnum is actually used, don't be fooled
+    def __init__(self, log_df: pd.DataFrame, bnum, video_ids, output_path='done/'): # bnum is actually used, don't be fooled
         def get_list_from_directory(directory=""):
             file_list = []
             if directory == "":
@@ -42,7 +42,7 @@ class ProduceVideo:
             duration = float(stream['duration'])
             return (duration)
 
-        def boomarangify_video(video_file):
+        def boomarangify_video(video_file, id):
             instances = (
                 ffmpeg
                 .input(video_file)
@@ -58,7 +58,7 @@ class ProduceVideo:
             output = (
                 ffmpeg
                 .concat(*ordered_edits, a=0, v=1)
-                .filter(filter_name="loop",loop=-1, size=config.FRAME_COUNT * 2)
+                .filter(filter_name="loop",loop=-1, size=config.channels_dict(id)['frames'] * 2)
                 .filter(filter_name="trim", start=0,duration=config.TRACK_DURATION * config.TRACK_COUNT)
                 #.output(f"{output_path}test.mp4")
                 #.run(overwrite_output=True)
@@ -109,31 +109,34 @@ class ProduceVideo:
 
         pass
         df = log_df.query('bnum == @bnum')
-        #  gather video stream
-        for index, row in df.iterrows():
-            pass
-            file = row['idvideo']
-            video_file = f"temp/{file}.mp4"
-            video_stream = boomarangify_video(video_file)
+        for id in video_ids:
+            #  gather video stream
+            for index, row in df.iterrows():
+                pass
+                if row['idvideo'] != id:
+                    continue
+                file = row['idvideo']
+                video_file = f"temp/{file}.mp4"
+                video_stream = boomarangify_video(video_file, row['id'])
 
-            #  gather audio stream
-            audio_files = []
-            pass
-            for id in list(row['idmusic']):
-                audio_files.append(f"temp/{id}.mp3")
-            audio_stream = concat_audio(audio_files)
+                #  gather audio stream
+                audio_files = []
+                pass
+                for id in list(row['idmusic']):
+                    audio_files.append(f"temp/{id}.mp3")
+                audio_stream = concat_audio(audio_files)
 
-            #  get title info
-            unique_num = get_next_file_index(output_path)
-            id = str(row['id'])
-            pass
-            #  produce video
-            (
-                ffmpeg
-                .concat(video_stream, audio_stream, v=1, a=1)
-                .output(f"{output_path}{unique_num}_{id}.mp4")
-                .run(overwrite_output=True)
-            )
+                #  get title info
+                unique_num = get_next_file_index(output_path)
+                id = str(row['id'])
+                pass
+                #  produce video
+                (
+                    ffmpeg
+                    .concat(video_stream, audio_stream, v=1, a=1)
+                    .output(f"{output_path}{unique_num}_{id}.mp4")
+                    .run(overwrite_output=True)
+                )
 '''
 test  = ProduceVideo(log_df=pd.read_csv("ref/log.csv"), bnum=69)
 '''
