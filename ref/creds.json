@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "friendly-cargo-384119",
+  "private_key_id": "6d7905ee8de4235b16480378322d1a2e72bca2f0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDGtMLQzE+TQ9K1\nubSUJ7AMjwePAU6h8ldth4t794+FC4OBCqYTv8CtDggyLZvHyvOCD3/jgnThl8Lh\nwOUcq94WUJh+O8n94egPbPZVtPH0J4nfUS7uXupHUMnWWLy1FFop4ErB7pcRTpAr\nj1UEaykyaQexE3QpMcZT3OGI74hpIh9j21KtpyE9qV4+jusjLdimirPJ2Cjl8Yli\nVpAdurU+nLYPBExKZP0Oc72CiwoebKAGCU6JWLBfN0phNM1itTMk66hR8c6NTUkz\n32/t4oKBL2BEuBDZv7+6ihko7dh9Xn5XJg0tNcqVnPbOssjswN3L9qiAXFppU3bb\n/I3UdBq9AgMBAAECggEABASmjKzlAXPTUoP4pfx1Eergp4TKg88wBDX/jCdXW29T\nkce5A1zS+TmzWWU22F3pzxWxBTt9YoRV/aqPyJPGwCErXdxBY+L7H+Mhl0zl4x7K\nXSZxUk+/lKubfYkCxkss3bgNd8EEYn/xeXd+eLEi3Hde2wxNU8aYf8ccSLXf15Dp\nfQONV9SN7BIuitYmTT1kW/xgJ3tI+6SQr/tYmTBh9ju4RcMlcOpm8P3U1PRGOE+u\nDlKK2MDdH3QtBNZJyoqQWChsPgLDJot0yFAsjxfV34Xjp2Ck2rm1gGDiTAEcKKSN\nTBWR1SVpE87QWTvRFrQt/HW9pvszsrgwl58z4ygT/QKBgQDoP5rLTlbda/rKIOqY\nrR+8gKi5gQcoe5g2owND/+nVmsxlerwKB7m7FZdSN7mvTYg1cvSXOkRl+eIBspzu\nRG1VVN6MqLaL54JXP/YDA06FdDpbVRVbEIRoetHSXGyuLsXOuswC95c0GzDJYcla\net4j9+iotckvGLhP/TEOHg16mwKBgQDbBv+em4MGpOKnflZVIQEQln/v1FP/A0Vw\nuXjq401mTRdKTgD958f9fRVza8cR/oMklSeTRVkVIsYedzkpdO6X1hwzcKhvEZES\nrnTuSagi1F2uuzdrBdeihCsyhltz9wSj5dH2UQPus4S7LSJd5jLZBhzC6B6ExGMj\nGEUfXisJhwKBgG3q1G8OJ4xp82rAg2c44IFNfw00pNejDxoksoH3V4sR1VTd7qrs\nlxmVEWYHG6l9D08ElgAQwphk2HMnPqCB4CD3ptB5dNPoAMccbWlloj8FEC1zqkTM\nH253WmCt/328gz/hJnbtCTHPAJr+3dYluobZaNKYHpxcnba1xQbCcGyrAoGASIP+\nqcKPFOoOaKn5Z2Hv+k/5t6uyy6GHohSmJg5vl8k6Rs2gom/U1OZO7dHnLNv5C2me\nmrHBFrBWq8uJT2J5hCfNWnKYMX29bFP6PtKAKlfpVGqDpJlglVvw+V9mc/R6wtDa\nPRUBmkwxS89bq38ForjVWOqFACwNLpdge0wwL40CgYABKsEVqB9/b+3ugRsMbzCa\nNXVFxFNpbcMAw8dcvuC5cGhXCgricW8DkH3wjogArPhF22uxg1VzE08MbTQUgDSx\nJp4075vGJoJXM7xT5eUCfvY3ZGH+h14KYz9TGlX1xbBqJw9jprAmrbDXXTKs4aIq\n5DU0UX1iKIqjXgd0QrwGWw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "runpod@friendly-cargo-384119.iam.gserviceaccount.com",
+  "client_id": "108919686800546063217",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/runpod%40friendly-cargo-384119.iam.gserviceaccount.com"
+}
