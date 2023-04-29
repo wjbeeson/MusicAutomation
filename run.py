@@ -67,6 +67,6 @@ class Run:
         pass
 
 
-run = Run({'zenscend': 9})
+run = Run({'zenscend': 3, "sliceoflofi": 3})
 run.run_batch()
 pass

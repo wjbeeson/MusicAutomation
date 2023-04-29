@@ -3,8 +3,7 @@ import json
 import time
 import httpx
 import requests
-from sentence_transformers import SentenceTransformer
-minilm = SentenceTransformer('all-MiniLM-L6-v2')
+
 
 
 

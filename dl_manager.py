@@ -81,7 +81,7 @@ class Manager:
                     frame_count = 0
                     for place in places_picks:
                         color_palate = ", ".join(colors[random.randrange(len(colors))])
-                        result[str(frame_count)] = f"{color_palate}, ({place}:2.0), {positive} --neg {negative}"
+                        result[str(frame_count)] = f"({place}:1.0), {positive} --neg {negative}"
                         frame_count = frame_count + channel_dict['prompt_dist']
                     pass
                     return result
