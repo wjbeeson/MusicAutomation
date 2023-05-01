@@ -15,7 +15,7 @@ from dl_manager import Manager
 
 class Run:
     def __init__(self, batch):
-        subprocess.run("runpodctl start pod 00hz3xz0o8i25x")
+        #  subprocess.run("runpodctl start pod 00hz3xz0o8i25x")
         self.manager = Manager(batch)
         self.music_gen = MusicGenerator()
         self.bnum = self.manager.bnum
@@ -28,8 +28,7 @@ class Run:
             if row['bnum'] == self.bnum:
                 id = row['id']
                 self.music_gen.generate_tracks(
-                    streams=config.channels_dict(id)['streams'],
-                    intensities=config.channels_dict(id)['intensities']
+                    channel=config.get_channel(id)
                 )
                 self.manager.log_df['idmusic'].iloc[i] = self.music_gen.ids
                 self.music_gen.download_tracks()  # music is only available for 10 min
@@ -64,9 +63,6 @@ class Run:
 
 
 
-        pass
-
-
-run = Run({'zenscend': 3, "sliceoflofi": 3})
+run = Run({"sliceoflofi": 1})
 run.run_batch()
 pass

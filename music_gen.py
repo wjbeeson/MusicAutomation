@@ -50,43 +50,32 @@ class MusicGenerator():
                         streams[name] = channel['playlist']
             return streams
         self.pat = get_pat()
-        self.channel_dict = get_streams_dict()
+        self.music_channel_dict = get_streams_dict()
 
 
         # instantiate id list for later
         self.ids = []
 
 
-    def generate_tracks(self, streams : list, intensities : list):
+    def generate_tracks(self, channel):
         self.ids = []
         tracks_generated = 0
-        while tracks_generated < config.TRACK_COUNT:
-            stream = streams[tracks_generated % len(streams)]
-            intensity = intensities[tracks_generated % len(intensities)]
+        while tracks_generated < channel.track_count:
+            stream = channel.music_channels[tracks_generated % len(channel.music_channels)]
+            intensity = channel.music_intensities[tracks_generated % len(channel.music_intensities)]
             #  queue track generation
             print(f"Queuing track [{tracks_generated + 1}]")
-            r = httpx.post('https://api-b2b.mubert.com/v2/TTMRecordTrack',
-                           json={
-                               "method": "TTMRecordTrack",
-                               "params": {
-                                   "text": f"{streams}",
-                                   "pat": f"{self.pat}",
-                                   "mode": f"{config.MUSIC_MODE}",
-                                   "duration": f"{config.TRACK_DURATION}",
-                                   "bitrate": "192"
-                               }
-                           })
             r = httpx.post('https://api-b2b.mubert.com/v2/RecordTrack',
                            json={
                                "method": "RecordTrack",
                                "params": {
                                    "pat": f"{self.pat}",
-                                   "playlist": f"{self.channel_dict[stream]}",
-                                   "duration": f"{config.TRACK_DURATION}",
+                                   "playlist": f"{self.music_channel_dict[stream]}",
+                                   "duration": f"{channel.track_duration}",
                                    "format": "mp3",
                                    "intensity": f"{intensity}",
                                    "bitrate": "320",
-                                   "mode": f"{config.MUSIC_MODE}"
+                                   "mode": f"{channel.music_mode}"
                                }
                            })
             #  record id to download later

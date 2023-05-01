@@ -51,7 +51,7 @@ class Manager:
         for channel_id in list(self.batch_dict.keys()):
 
             #  fetch channel specifics
-            channel_dict = config.channels_dict(channel_id)
+            channel = config.get_channel(channel_id)
 
             #  for the numbers you want to generate
             for i in range(self.batch_dict[channel_id]):
@@ -59,10 +59,10 @@ class Manager:
                     result = {}
 
                     #  pick random places
-                    places_cnt = math.floor(channel_dict['frames'] / channel_dict['prompt_dist'])
+                    places_cnt = math.floor(channel.video_frames / channel.place_dist)
                     successful = 0
                     places_picks = []
-                    places_list = channel_dict['places']
+                    places_list = channel.places
                     while successful < places_cnt:
                         place_pick = random.randrange(len(places_list))
 
@@ -72,17 +72,15 @@ class Manager:
                         places_picks.append(places_list[place_pick])
                         successful = successful + 1
 
-                    positive = channel_dict['positive']
-                    negative = channel_dict['negative']
-                    colors = channel_dict['colors']
+                    positive = channel.positive_end
+                    negative = channel.negative_end
                     #  pick random colors
 
 
                     frame_count = 0
                     for place in places_picks:
-                        color_palate = ", ".join(colors[random.randrange(len(colors))])
                         result[str(frame_count)] = f"({place}:1.0), {positive} --neg {negative}"
-                        frame_count = frame_count + channel_dict['prompt_dist']
+                        frame_count = frame_count + channel.place_dist
                     pass
                     return result
 
@@ -101,11 +99,7 @@ class Manager:
                     prompt=video_prompt,
                     batch_name=batch_id,
                     timestring=datetime.now().strftime("%Y%m%d%H%M%S"),
-                    angle=channel_dict["rotation_angle"],
-                    zoom=channel_dict["zoom_speed"],
-                    strength=channel_dict["strength"],
-                    fps=channel_dict["fps"],
-                    frames=channel_dict["frames"]
+                    channel=channel
                 )
                 json_object = json.dumps(batch_file, indent=4)
                 f = open(f"json/{batch_id}", "w")

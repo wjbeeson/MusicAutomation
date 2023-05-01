@@ -1,14 +1,14 @@
 import config
 
 
-def get_json(prompt, batch_name, timestring, angle, zoom, strength, fps, frames):
+def get_json(prompt, batch_name, timestring, channel):
     filetxt = \
         {
-            "W": config.VIDEO_WIDTH,
-            "H": config.VIDEO_HEIGHT,
+            "W": channel.video_width,
+            "H": channel.video_height,
             "tiling": False,
             "restore_faces": False,
-            "seed": config.SEED,
+            "seed": channel.seed,
             "sampler": "Euler a",
             "seed_resize_from_w": 0,
             "seed_resize_from_h": 0,
@@ -21,7 +21,7 @@ def get_json(prompt, batch_name, timestring, angle, zoom, strength, fps, frames)
             "seed_iter_N": 1,
             "use_init": False,
             "strength_0_no_init": True,
-            "strength": strength,
+            "strength": channel.diffusion_strength,
             "init_image": None,
             "use_mask": False,
             "use_alpha_as_mask": False,
@@ -42,13 +42,13 @@ def get_json(prompt, batch_name, timestring, angle, zoom, strength, fps, frames)
             "positive_prompts": "",
             "negative_prompts": "",
             "outdir": f"/workspace/stable-diffusion-webui/outputs/img2img-images/{batch_name}",
-            "animation_mode": f"{config.ANIMATION_MODE}",
-            "max_frames": frames,
+            "animation_mode": f"{channel.animation_mode}",
+            "max_frames": channel.video_frames,
             "border": "replicate",
-            "angle": f"0:({angle})",
-            "zoom": f"0:({zoom})",
+            "angle": f"0:({channel.rotation_angle})",
+            "zoom": f"0:({channel.zoom_speed})",
             "translation_x": "0:(0)",
-            "translation_y": "0:(0)",
+            "translation_y": f"0:({channel.y_movement})",
             "translation_z": "0:(1.75)",
             "transform_center_x": "0:(0.5)",
             "transform_center_y": "0:(0.5)",
@@ -91,7 +91,7 @@ def get_json(prompt, batch_name, timestring, angle, zoom, strength, fps, frames)
             "sigma_schedule": "0: (1.0)",
             "amount_schedule": "0: (0.1)",
             "threshold_schedule": "0: (0.0)",
-            "color_coherence": f"{config.COLOR_COHERENCE}",
+            "color_coherence": f"{channel.color_coherence}",
             "color_coherence_image_path": "",
             "color_coherence_video_every_N_frames": 1.0,
             "color_force_grayscale": False,
@@ -148,7 +148,7 @@ def get_json(prompt, batch_name, timestring, angle, zoom, strength, fps, frames)
             "tweening_frames_schedule": "0:(20)",
             "color_correction_factor": "0:(0.075)",
             "skip_video_creation": False,
-            "fps": fps,
+            "fps": channel.fps,
             "make_gif": False,
             "delete_imgs": True,
             "add_soundtrack": "None",
@@ -163,8 +163,8 @@ def get_json(prompt, batch_name, timestring, angle, zoom, strength, fps, frames)
             "frame_interpolation_slow_mo_enabled": False,
             "frame_interpolation_slow_mo_amount": 2,
             "frame_interpolation_keep_imgs": False,
-            "sd_model_name": "ProtoGen_X5.8-pruned-fp16.ckpt",
-            "sd_model_hash": "d2089202",
+            "sd_model_name": f"{channel.sd_model_name}",
+            "sd_model_hash": f"{channel.sd_model_hash}",
             "deforum_git_commit_id": "83235961 (Sun Apr 23 10:40:12 2023)"
         }
     return filetxt

@@ -121,9 +121,9 @@ class ProduceVideo:
 
                 #  gather audio stream
                 audio_files = []
-                pass
                 for id in list(row['idmusic']):
                     audio_files.append(f"temp/{id}.mp3")
+                pass
                 audio_stream = concat_audio(audio_files)
 
                 #  get title info
@@ -138,7 +138,6 @@ class ProduceVideo:
                     .run(overwrite_output=True)
                 )
 '''
-test  = ProduceVideo(log_df=pd.read_csv("ref/log.csv"), bnum=69)
+ProduceVideo(log_df=pd.read_csv("ref/log.csv"), bnum=3, video_ids=["d1f61361-e615-11ed-ade3-ec2e98c1408a"])
 '''
-
 
