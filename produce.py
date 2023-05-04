@@ -54,12 +54,11 @@ class ProduceVideo:
                     ordered_edits.append(instances[i])
                 else:
                     ordered_edits.append(instances[i].filter(filter_name="reverse"))
-
             output = (
                 ffmpeg
                 .concat(*ordered_edits, a=0, v=1)
-                .filter(filter_name="loop",loop=-1, size=config.channels_dict(id)['frames'] * 2)
-                .filter(filter_name="trim", start=0,duration=config.TRACK_DURATION * config.TRACK_COUNT)
+                .filter(filter_name="loop",loop=-1, size=self.channel.video_frames * 2)
+                .filter(filter_name="trim", start=0,duration=self.channel.track_duration * self.channel.track_count)
                 #.output(f"{output_path}test.mp4")
                 #.run(overwrite_output=True)
             )
@@ -73,11 +72,11 @@ class ProduceVideo:
                 audio_inputs.append(
                     ffmpeg
                     .input(file)
-                    .filter(filter_name="atrim", start=0, duration=config.TRACK_DURATION)
-                    .filter(filter_name="afade", type="in", start_time=0, duration=config.FADE_IN_SEC, curve="losi")
-                    .filter(filter_name="afade", type="out", start_time=config.TRACK_DURATION - config.FADE_OUT_SEC,
-                            duration=config.FADE_OUT_SEC, curve="par")
-                    .filter(filter_name="atrim", start=0, duration=config.TRACK_DURATION)
+                    .filter(filter_name="atrim", start=0, duration=self.channel.track_duration)
+                    .filter(filter_name="afade", type="in", start_time=0, duration=self.channel.fade_in_sec, curve="losi")
+                    .filter(filter_name="afade", type="out", start_time=self.channel.track_duration - self.channel.fade_out_sec,
+                            duration=self.channel.fade_out_sec, curve="par")
+                    .filter(filter_name="atrim", start=0, duration=self.channel.track_duration)
                 )
             result = (
                 ffmpeg
@@ -115,6 +114,7 @@ class ProduceVideo:
                 pass
                 if row['idvideo'] != id:
                     continue
+                self.channel = config.get_channel(row['id'])
                 file = row['idvideo']
                 video_file = f"temp/{file}.mp4"
                 video_stream = boomarangify_video(video_file, row['id'])
@@ -138,6 +138,6 @@ class ProduceVideo:
                     .run(overwrite_output=True)
                 )
 '''
-ProduceVideo(log_df=pd.read_csv("ref/log.csv"), bnum=3, video_ids=["d1f61361-e615-11ed-ade3-ec2e98c1408a"])
+ProduceVideo(log_df=pd.read_csv("ref/log.csv"), bnum=16, video_ids=["cd57c07c-ea42-11ed-9c5e-ec2e98c1408a"])
 '''
 

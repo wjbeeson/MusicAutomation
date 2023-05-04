@@ -20,7 +20,6 @@ class Run:
         self.music_gen = MusicGenerator()
         self.bnum = self.manager.bnum
         pass
-
     def run_batch(self):
         # queue and download all music
         i = 0
@@ -63,6 +62,6 @@ class Run:
 
 
 
-run = Run({"sliceoflofi": 1})
+run = Run({"melodream": 2, "sliceoflofi": 2,"tokyojazzcafe": 2})
 run.run_batch()
 pass
