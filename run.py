@@ -62,6 +62,6 @@ class Run:
 
 
 
-run = Run({"melodream": 2, "sliceoflofi": 2,"tokyojazzcafe": 2})
+run = Run({"melodream": 1})
 run.run_batch()
 pass

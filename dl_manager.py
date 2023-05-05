@@ -112,7 +112,7 @@ class Manager:
         self.log_df.to_csv(self.log_loc, index=False)
         pass
 
-'''
-batches = {'zenscend': 5}
-lm = LogManager(batches)
-'''
+
+batches = {'tokyojazzcafe': 1}
+lm = Manager(batches)
+
